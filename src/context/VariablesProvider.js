@@ -1,10 +1,14 @@
 import React from 'react'
 import portfolio1 from '../img/portfolio1.webp'
 import portfolio2 from '../img/portfolio2.webp'
-import portfolio3 from '../img/portfolio3.webp'
 import portfolio4 from '../img/portfolio4.webp'
 import portfolio5 from '../img/portfolio5.webp'
-import portfolio6 from '../img/portfolio6.webp'
+import portfolio7 from '../img/portfolio7.webp'
+import portfolio8 from '../img/portfolio8.webp'
+import portfolio9 from '../img/portfolio9.webp'
+import obras2 from '../img/obras2.webp'
+import obras3 from '../img/obras3.webp'
+import obras5 from '../img/obras5.webp'
 
 import logo from '../img/logo.png'
 import historia from '../img/historia.webp'
@@ -15,7 +19,7 @@ const VariablesProvider = (props) => {
 
 
     const variablesGlobales = {
-        iframeUbicacion: 'https://maps.google.com/maps?q=21%20N%C2%B01510,%20miramar&t=&z=13&ie=UTF8&iwloc=&output=embed',
+        iframeUbicacion: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.341801732421!2d-58.46014958468972!3d-34.544900261895556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb426ba8c1e9b%3A0x45305aa2ca115efa!2sEstadio%20Obras%20Sanitarias!5e0!3m2!1ses!2sar!4v1617032475813!5m2!1ses!2sar',
         tituloUbicacion: 'Ubicación',
         direccion: 'calle 21 N°1510 - Miramar',
         mailTo: 'mailto:consultas@foh-sa.com',
