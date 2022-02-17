@@ -8,8 +8,10 @@ import portfolio8 from '../img/portfolio8.webp'
 import portfolio9 from '../img/portfolio9.webp'
 import obras2 from '../img/obras2.webp'
 import obras3 from '../img/obras3.webp'
-import logo from '../img/logo.png'
 import obras5 from '../img/obras5.webp'
+
+import logo from '../img/logo.png'
+
 
 export const VariablesContext = React.createContext()
 
