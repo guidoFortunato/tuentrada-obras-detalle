@@ -150,7 +150,7 @@ const DetalleEvento = (props) => {
                     </div>
                 </div>
             </div>
-
+{/*  */}
 
 
         
