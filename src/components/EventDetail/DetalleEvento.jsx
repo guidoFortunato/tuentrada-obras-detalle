@@ -120,7 +120,7 @@ const DetalleEvento = (props) => {
                                     className="btn btn-warning boton"
                                     onClick={()=>comprar()}
                                 >
-                                        Comprar
+                                    <span className='boton-comprar'>Comprar</span>
                             </button>
                         </div>
                         
@@ -131,12 +131,30 @@ const DetalleEvento = (props) => {
                             
                         
                 </div>
+
+                <div className="row">
+                    <div className="col-12 col-lg-6 mt-3">
+
+                        <h2>Descripcion</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id vero itaque minus aut placeat fugit dolore quod cumque, repudiandae exercitationem eligendi molestias debitis iure. Vitae optio veniam fuga molestias maiores. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit praesentium totam molestias accusamus quibusdam adipisci, possimus a magnam omnis aspernatur veniam dolore perspiciatis debitis reprehenderit excepturi, officia sit, facere rerum?
+                        </p>
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="col-12 mt-3 d-flex justify-content-center">
+
+                        <h2 className=''>PRECIOS</h2>
+                        
+                    </div>
+                </div>
             </div>
 
 
 
         
-        <footer id="footer" className='footer-bottom'>
+        <footer id="footer">
             <div className="container">
                 <div className="row">
                     <div className="col-12">

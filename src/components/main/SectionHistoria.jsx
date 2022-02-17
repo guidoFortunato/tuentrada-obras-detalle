@@ -13,9 +13,9 @@ const SectionHistoria = () => {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="col-md-12">
-                                {/* <h2 className="section-title">{variables.tituloHistoriaArriba}</h2> */}
+                                <h2 className="section-title">{variables.tituloHistoriaArriba}</h2>
                                 <div className="section-title-divider"></div>
-                                {/* <h4 className="section-title" align="center">{variables.tituloHistoriaAbajo}</h4> */}
+                                <h4 className="section-title" align="center">{variables.tituloHistoriaAbajo}</h4>
                                 </div>
                             </div>
                         </div>

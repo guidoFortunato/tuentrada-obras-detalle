@@ -5,25 +5,26 @@ body {
 }
 
 a {
-  color: #B10439;
+  color: #a28200;
   transition: 0.5s;
 }
 
 .btn-color{
-  background-color: #B10439 !important;
-  border-color: #B10439 !important;
+  background-color: #a28200 !important;
+  border-color: #a28200 !important;
   transition: all 400ms ease;
+  font-weight: 600;
 }
 .btn-color:hover{
   background-color: #fff !important;
-  border-color: #B10439 !important;
-  color: #B10439 !important;
+  border-color: #a28200 !important;
+  color: #a28200 !important;
   
   
 }
 
 a:hover, a:active, a:focus {
-  color: #B10439;
+  color: #a28200;
   outline: none;
   text-decoration: none;
 }
@@ -53,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 100%;
   overflow: visible;
-  background: #fff url("./img/miramar6.webp") no-repeat center right;
+  background: #fff url("./img/obras1920.webp") no-repeat center center;
 }
 
 .back-to-top {
@@ -77,7 +78,7 @@ h1, h2, h3, h4, h5, h6 {
 
 hr:not([size]) {
   height: 2px;
-  background: #B10439;
+  background: #a28200;
   opacity: 0.75;
 }
 
@@ -92,7 +93,7 @@ hr:not([size]) {
 }
 
 .back-to-top:hover {
-  background: #B10439;
+  background: #a28200;
   color: #fff;
 }
 
@@ -103,19 +104,19 @@ hr:not([size]) {
     display: table;
     width: 100%;
     height: 100vh;
-    background: url('./img/miramar6.webp') center right;
+    background: url('./img/obras1920.webp') center center;
     background-size: cover;
   }
 
-  @media screen and (max-width: 760px) {
+  /* @media screen and (max-width: 760px) {
     #hero {      
       background: url('./img/miramar7.webp') bottom center;
-      /* background-size: cover; */
+      
     }
     #preloader {
       background: #fff url("./img/miramar7.webp") no-repeat;
     }
-  }
+  } */
   
   @media (min-width: 1024px) {
     #hero {
@@ -163,7 +164,7 @@ hr:not([size]) {
   #hero h2 span {
     color: #fff;
     transition: 0.3s;
-    border-bottom: 2px solid #B10439;
+    border-bottom: 2px solid #a28200;
   }
   
   @media (max-width: 768px) {
@@ -184,7 +185,7 @@ hr:not([size]) {
   #hero .actions a {
     font-family: "Raleway", sans-serif;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 16px;
     letter-spacing: 1px;
     display: inline-block;
@@ -195,15 +196,15 @@ hr:not([size]) {
   }
   
   #hero .btn-get-started {
-    background: #B10439;
-    border: 2px solid #B10439;
+    background: #a28200;
+    border: 2px solid #a28200;
     color: #fff;
     text-decoration: none
   }
   
   #hero .btn-get-started:hover {
     background: none;
-    border: 2px solid #B10439;
+    border: 2px solid #a28200;
     color: #fff;
   }
   
@@ -213,8 +214,8 @@ hr:not([size]) {
   }
   
   #hero .btn-services:hover {
-    background: #B10439;
-    border: 2px solid #B10439;
+    background: #a28200;
+    border: 2px solid #a28200;
   }
 
   /*Header
@@ -292,7 +293,7 @@ hr:not([size]) {
   }
   
   .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
-    color: #B10439;
+    color: #a28200;
   }
   
   .nav-menu .drop-down ul {
@@ -329,7 +330,7 @@ hr:not([size]) {
   }
   
   .nav-menu .drop-down ul a:hover, .nav-menu .drop-down ul .active > a, .nav-menu .drop-down ul li:hover > a {
-    color: #B10439;
+    color: #a28200;
   }
   
   .nav-menu .drop-down > a:after {
@@ -432,7 +433,7 @@ hr:not([size]) {
   }
   
   .mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
-    color: #B10439;
+    color: #a28200;
     text-decoration: none;
   }
   
@@ -512,7 +513,7 @@ hr:not([size]) {
   .section-title-divider {
     width: 50px;
     height: 3px;
-    background: #B10439;
+    background: #a28200;
     margin: 0 auto;
     margin-bottom: 20px;
   }
@@ -612,11 +613,11 @@ hr:not([size]) {
   
   #services .service-icon {
     float: left;
-    background: #B10439;
+    background: #a28200;
     padding: 16px;
     border-radius: 50%;
     transition: 0.5s;
-    border: 1px solid #B10439;
+    border: 1px solid #a28200;
   }
   
   #services .service-icon i {
@@ -629,7 +630,7 @@ hr:not([size]) {
   }
   
   #services .service-item:hover .service-icon i {
-    color: #B10439;
+    color: #a28200;
   }
   
   #services .service-title {
@@ -687,8 +688,8 @@ hr:not([size]) {
   }
   
   #subscribe .subscribe-btn:hover {
-    background: #B10439;
-    border: 2px solid #B10439;
+    background: #a28200;
+    border: 2px solid #a28200;
   }
   
   /* Portfolio Section
@@ -718,7 +719,7 @@ hr:not([size]) {
   }
   
   #portfolio #portfolio-flters li:hover, #portfolio #portfolio-flters li.filter-active {
-    color: #B10439;
+    color: #a28200;
   }
   
   #portfolio #portfolio-flters li:last-child {
@@ -764,7 +765,7 @@ hr:not([size]) {
   }
   
   #portfolio .portfolio-item .portfolio-info .preview-link:hover, #portfolio .portfolio-item .portfolio-info .details-link:hover {
-    color: #B10439;
+    color: #a28200;
   }
   
   #portfolio .portfolio-item .portfolio-info .details-link {
@@ -823,7 +824,7 @@ hr:not([size]) {
   
   #testimonials .profile h4 {
     font-weight: 700;
-    color: #B10439;
+    color: #a28200;
     margin-bottom: 5px;
   }
   
@@ -904,10 +905,10 @@ hr:not([size]) {
   }
   
   #team .btn-get-started {
-    background: #B10439;
+    background: #a28200;
     padding-left: 15px;
     padding-right: 15px;
-    border: 2px solid #B10439;
+    border: 2px solid #a28200;
     color: #fff;
   }
   
@@ -915,8 +916,8 @@ hr:not([size]) {
     background: none;
     padding-left: 20px;
     padding-right: 20px;
-    border: 2px solid #B10439;
-    color: #B10439;
+    border: 2px solid #a28200;
+    color: #a28200;
   }
   #team .btn-services {
     border: 2px solid #fff;
@@ -924,8 +925,8 @@ hr:not([size]) {
   }
   
   #team .btn-services:hover {
-    background: #B10439;
-    border: 2px solid #B10439;
+    background: #a28200;
+    border: 2px solid #a28200;
   }
   
   
@@ -938,7 +939,7 @@ hr:not([size]) {
   }
   
   #team .member .social a:hover {
-    color: #B10439;
+    color: #a28200;
   }
   
   #team .member .social i {
@@ -1179,7 +1180,7 @@ hr:not([size]) {
   
   #contact .info i {
     font-size: 32px;
-    color: #B10439;
+    color: #a28200;
     float: left;
   }
   
@@ -1244,11 +1245,11 @@ hr:not([size]) {
   }
   
   #contact .php-email-form input::focus, #contact .php-email-form textarea::focus {
-    background-color: #B10439;
+    background-color: #a28200;
   }
   
   #contact .php-email-form button[type="submit"] {
-    background: #B10439;
+    background: #a28200;
     border: 0;
     padding: 10px 24px;
     color: #fff;
@@ -1261,7 +1262,7 @@ hr:not([size]) {
 
   .consultas{
     text-decoration: none;
-    color: #B10439;
+    color: #a28200;
   }
   .consultas:hover{
     color: #d695a8;
@@ -1283,20 +1284,20 @@ hr:not([size]) {
 
   .boton-arriba {
     
-    background: #B10439;
+    background: #a28200;
     color: #fff;
     width: 35px;
     height: 35px;
     text-align: center;
     border-radius: 50%;
-    border: 1px solid #B10439;
+    border: 1px solid #a28200;
     transition: all 400ms ease;
   }
   .boton-arriba:hover {
     
     background: #fff;
-    color: #B10439;
-    border: 1px solid #B10439;
+    color: #a28200;
+    border: 1px solid #a28200;
   }
 
   .ocultar-boton{
@@ -1446,7 +1447,7 @@ hr:not([size]) {
   }
   
   .portfolio-details .portfolio-details-carousel .owl-dot.active {
-    background-color: #B10439 !important;
+    background-color: #a28200 !important;
   }
   
   .portfolio-details .portfolio-info {
@@ -1523,17 +1524,17 @@ hr:not([size]) {
   }
 
   footer a{
-    color: #ce5f80;
+    color: #a28200;
     text-decoration: none;
   }
   
   footer a:hover{
-    color: #B10439;
+    color: rgba(234,187,0,.8901960784313725);
   }
 
 
   .footer-bottom {
-    position: fixed;
+    position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
@@ -1558,13 +1559,13 @@ hr:not([size]) {
     }
 
     .fecha-hora__color-texto{
-      color: #B10439;
+      color: #a28200;
       font-weight: 700;
     }
 
 
     .color-icono{
-      color: #B10439;
+      color: #a28200;
     }
 
     .logo-consultas{
@@ -1636,6 +1637,9 @@ hr:not([size]) {
   }
   .boton{
     width: 50%;
+  }
+  .boton-comprar{
+    font-weight: 600;
   }
 
   @media (max-width: 278px) {

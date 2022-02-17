@@ -13,7 +13,7 @@ import Error404 from './components/auth/Error404';
 // import { HashRouter } from 'react-router-dom/cjs/react-router-dom.min';
 // import BotonFlotante from './components/main/BotonFlotante';
 import Home from './components/home/Home';
-import DetalleEvento from './components/eventDetail/DetalleEvento';
+import DetalleEvento from './components/EventDetail/DetalleEvento';
 
 
 const TagManagerArgs = {
@@ -34,7 +34,7 @@ function App() {
     <>
     <VariablesProvider>
 
-      <Router basename={'/teatro/astralmiramar'}>
+      <Router basename={'/estadio/obras'}>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/:id" component={DetalleEvento} />
