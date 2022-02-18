@@ -16,7 +16,7 @@ a {
 .btn-color{
   background-color: #a28200 !important;
   border-color: #a28200 !important;
-  transition: all 400ms ease;
+  transition: background-color 400ms;
   font-weight: 600;
 }
 .btn-color:hover{
@@ -1653,28 +1653,46 @@ hr:not([size]) {
     display: flex;
     justify-content: center;
   }
+
+  /* Boton comprar y volver*/
   
   
 
   .color-comprar{
     background-color: var(--color-magenta);
     border: 1px solid var(--color-magenta);
-    transition: all 0.5s;
+    transition: background-color 0.3s;
   }
 
   .color-comprar:hover{
-    background-color: #fff;
-    color: var(--color-magenta) !important;
+    background-color: #a10c4f
   }
 
   .color-volver{
     background-color: #ffc107;
     border: 1px solid #ffc107;
-    transition: all 0.5s;
+    transition: background-color 0.3s;
   }
   .color-volver:hover{
-    background-color: #fff;
+    background-color: #d4ac31;
   }
+
+  .animacion-boton:active{
+    transform: scale(.9);
+  }
+
+  .btn-primary:focus {    
+    box-shadow: 0 0 0 0 rgb(49 132 253 / 50%) !important;
+  }
+
+  .btn:focus {
+    box-shadow: 0 0 0 0 rgb(13 110 253 / 25%)  !important;
+  }
+
+
+
+  /****************************/
+
 
   @media (max-width: 278px) {
     
