@@ -1,3 +1,7 @@
+:root{
+  --color-magenta: #e10165;
+}
+
 body {
   background: #fff;
   color: #666666;
@@ -77,9 +81,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 hr:not([size]) {
-  height: 2px;
-  background: #a28200;
+  height: 3px;
+  background: #b7b7b7;
   opacity: 0.75;
+}
+
+.titulo__ubicacion-precios{
+  margin: 0;
+}
+
+.hr-evento-detalle{
+  width: 130px;
+  margin: 3px 0 30px 0;
+  height: 6px !important;
+  background: var(--color-magenta) !important;
 }
 
 
@@ -110,17 +125,20 @@ hr:not([size]) {
 
   /* @media screen and (max-width: 760px) {
     #hero {      
-      background: url('./img/miramar7.webp') bottom center;
+      background-size: contain;
+      background-repeat: no-repeat;
       
     }
     #preloader {
-      background: #fff url("./img/miramar7.webp") no-repeat;
+      background-size: contain;
+      background-repeat: no-repeat;
     }
   } */
   
   @media (min-width: 1024px) {
     #hero {
       background-attachment: fixed;
+      background-size: cover;
     }
   }
   
@@ -1635,11 +1653,27 @@ hr:not([size]) {
     display: flex;
     justify-content: center;
   }
-  .boton{
-    width: 50%;
+  
+  
+
+  .color-comprar{
+    background-color: var(--color-magenta);
+    border: 1px solid var(--color-magenta);
+    transition: all 0.5s;
   }
-  .boton-comprar{
-    font-weight: 600;
+
+  .color-comprar:hover{
+    background-color: #fff;
+    color: var(--color-magenta) !important;
+  }
+
+  .color-volver{
+    background-color: #ffc107;
+    border: 1px solid #ffc107;
+    transition: all 0.5s;
+  }
+  .color-volver:hover{
+    background-color: #fff;
   }
 
   @media (max-width: 278px) {
@@ -1729,6 +1763,31 @@ hr:not([size]) {
     justify-content: center;
   }
 
+
+  /*Tabla ubicacion y precios*/
+
+  /* thead{
+    border-width: 0 !important;
+  } */
+
+  table.table {
+    border-bottom: 3px solid #dee2e6 !important;
+  }
+
+  tbody, td, tfoot, th, thead, tr {
+    border-width: 3px !important;
+    border-bottom-width: 0px !important;
+    border-bottom: #0d0d0d;
+}
+
+  .cabecera-tabla{
+    background-color: rgb(30, 151, 230);
+    border-bottom: none;
+  }
+
+  .color-precio{
+    color: var(--color-magenta);
+  }
   
 
  
