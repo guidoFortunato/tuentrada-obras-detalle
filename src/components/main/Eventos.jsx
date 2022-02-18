@@ -56,7 +56,7 @@ const Eventos = (props) => {
                 */
 
                 
-                console.log(data)
+                
                 setEventos(data)
                 
             } catch (err) {
@@ -91,12 +91,14 @@ const Eventos = (props) => {
                         </div>
 
                         <div className="row">
+                            
 
                             
 
                          
                             
                             { eventos.length > 0 ? eventos.map( item => (
+                                <div className="col-12 col-sm-6 col-md-4 col-lg-3 text-center mt-2 mb-2" key={item.id}>
                                     <ListaEventos 
                                         id={item.id} 
                                         title={item.title} 
@@ -105,6 +107,7 @@ const Eventos = (props) => {
                                         time={item.time} 
                                         buy={item.link_to_buy}
                                     />
+                                </div>
                                 )) : <MessageError error={error}/>
                            
                             }

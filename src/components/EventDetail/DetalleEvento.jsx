@@ -1,19 +1,47 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { withRouter } from 'react-router'
 import { Link, useParams } from "react-router-dom"
-import { Get } from '../services/privateApiService'
 import rapsodia from '../../img/rapsodia.jpg'
 import { VariablesContext } from '../../context/VariablesProvider'
+import Loader from '../main/Loader/Loader';
+import MessageError from '../error/MessageError';
+import Tabla from './Tabla'
+import Alojamiento from './Alojamiento'
 
 
 
 const DetalleEvento = (props) => {
-
-    const [eventos, setEventos] = React.useState([])
-
+    
+    const [eventos, setEventos] = useState([]);
+    const [precios, setPrecios] = useState('');
+    const [ubicacion, setUbicacion] = useState('');
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null)
+    
 
 
     const {variables} = React.useContext(VariablesContext)
+
+    // const ubicaciones = ['Butaca preferencial', 'Preferencial 1 y 2', 'Mesas centrales']
+    const ubicaciones = [
+        {
+        ubicacion: 'Butaca preferencial',
+        precio: '1600',
+        servicio: '160'
+        },
+        {
+        ubicacion: 'Preferencial 1 y 2',
+        precio: '1500',
+        servicio: '150'
+        },
+        {
+        ubicacion: 'Mesas centrales',
+        precio: '1200',
+        servicio: '120'
+        },
+        
+    ]
+    // const precioUbi = ['1600 + 160', '1500 + 150', '1200 + 120']
 
 
 
@@ -25,23 +53,58 @@ const DetalleEvento = (props) => {
     
 
     useEffect(()=>{
-        
-        
+        setLoading(true)
 
         const getData = async ()=>{
-            // const url = process.env.REACT_APP_API_OBRAS 
-            const url = 'https://api.tuentrada.com/api/venue?venue=astral' 
+            const url = 'https://api.tuentrada.com/api/venue?venue=obras'
+            const token = '3|ruU31fAttxU0FKWmvV8pdB1GCyhQa7lNAQwBfEVb'
 
             try {
+                const res = await fetch(url, {
 
-                const response = await Get(url)               
-                setEventos(response)
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    }
+        
+                })
+                
+                
+                // eslint-disable-next-line no-throw-literal
+                if (!res.ok) throw {
+                    err: true,
+                    status: res.status || "00", 
+                    statusText: res.statusText || "Error al intentar acceder al servidor"
+                }
 
+               
+                const data = await res.json()
 
-            } catch (error) {
-                console.log(error)
+                 /*
+                no funciona el manejo de error
+               
+                if (!res.ok) throw {
+                    err: true,
+                    status: res.status || "00", 
+                    statusText: res.statusText || "Ocurrió un error"
+                }
+                */
+
+                
+                console.log(data)
+                setEventos(data)
+                
+            } catch (err) {
+                console.log('error',err)
+                if (err) {
+                    setError(err)
+                }    
             }
+            
 
+           
+            setLoading(false)
         }
         
         getData()
@@ -50,7 +113,7 @@ const DetalleEvento = (props) => {
 
 
 
-    return (
+    return loading ? <Loader /> : (
         <>
 
             <nav  className="navbar navbar-expand-lg navbar-dark navbar-active sticky-top">
@@ -60,12 +123,12 @@ const DetalleEvento = (props) => {
                     </Link>
                     
                     
-                    <button 
+                    {/* <button 
                         className="btn btn-dark ms-auto"
                         onClick={()=>props.history.push('/')}
                     >
                         {variables.volver}
-                    </button>
+                    </button> */}
                     
                 </div>
             </nav>
@@ -73,7 +136,7 @@ const DetalleEvento = (props) => {
         
             <div className="container mt-2 ">
                 <h1 className='titulo-evento-detalle'>Id del evento: {id}</h1> 
-                <hr className='hr-evento-detalle'/>
+                <hr />
                 <div className="row">
                     <div className="col-12 col-lg-6 mb-5 mb-lg-0">
                         <img src={rapsodia} alt="imagen evento" className='img-evento' />
@@ -115,14 +178,6 @@ const DetalleEvento = (props) => {
                             <span className='fecha-hora__color-texto'>Apertura puertas:</span>
                             <span className='ms-1'>19:00 hs</span>
                         </div>
-                        <div className='container-button'>
-                            <button 
-                                    className="btn btn-warning boton"
-                                    onClick={()=>comprar()}
-                                >
-                                    <span className='boton-comprar'>Comprar</span>
-                            </button>
-                        </div>
                         
                         
                         
@@ -132,25 +187,59 @@ const DetalleEvento = (props) => {
                         
                 </div>
 
-                <div className="row">
-                    <div className="col-12 col-lg-6 mt-3">
+               
+                    <div className="col-12 mt-5">
 
-                        <h2>Descripcion</h2>
+                        <h2>Título descripción</h2>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Id vero itaque minus aut placeat fugit dolore quod cumque, repudiandae exercitationem eligendi molestias debitis iure. Vitae optio veniam fuga molestias maiores. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit praesentium totam molestias accusamus quibusdam adipisci, possimus a magnam omnis aspernatur veniam dolore perspiciatis debitis reprehenderit excepturi, officia sit, facere rerum?
                         </p>
-                    </div>
-                </div>
-
-                <div className="row">
-                    <div className="col-12 mt-3 d-flex justify-content-center">
-
-                        <h2 className=''>PRECIOS</h2>
+                        <div className='container-button'>
+                            <button 
+                                    className="btn color-comprar w-25 mb-3 text-white animacion-boton"
+                                    onClick={()=>comprar()}
+                                >
+                                    <span className='fw-bold'>Comprar</span>
+                            </button>
+                            
+                        </div>
+                        <div className='container-button'>
+                            <button 
+                                className="btn w-25 color-volver animacion-boton"
+                                onClick={()=>props.history.push('/')}
+                            >
+                                <span className='fw-bold'>{variables.volver}</span>
+                            </button>                            
+                        </div>
                         
                     </div>
-                </div>
-            </div>
+               
+               
+                    <div className="col-12mt-5">
 
+                        <h2 className='titulo__ubicacion-precios'>Ubicación y precios</h2>
+                        <hr className='hr-evento-detalle' />
+
+                       <Tabla ubicaciones={ubicaciones} />
+
+
+                        
+                    </div>
+                    <div className="col-12 mt-5 mb-5">
+
+                        <h2 className='titulo__ubicacion-precios'>Elegí tu alojamiento</h2>
+                        <hr className='hr-evento-detalle' />
+
+                        <Alojamiento />
+
+                       
+
+
+                        
+                    </div>
+               
+            </div>
+{/*  */}
 
 
         
