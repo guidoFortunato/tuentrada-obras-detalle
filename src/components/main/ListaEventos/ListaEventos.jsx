@@ -9,7 +9,7 @@ const ListaEventos = ({id, title, image, date, time, buy}) => {
     
     return (
         <>                                       
-                    <div className="col-12 col-sm-6 col-md-4 col-lg-3 text-center mt-2 mb-2" key={id}>
+                    
                         <div className="card">                                            
                             <img src={`https://tuentrada.com/${image}`} className="card-img-top" alt={title} />
                             <div className="card-body">                                                
@@ -19,9 +19,7 @@ const ListaEventos = ({id, title, image, date, time, buy}) => {
 
                                 <div className="container-tuentrada">
 
-                                    <div className="container-tuentrada__col1 me-5">
-
-                                   
+                                    <div className="container-tuentrada__col1 me-5">               
 
                                 
                                        
@@ -31,7 +29,7 @@ const ListaEventos = ({id, title, image, date, time, buy}) => {
                                        
                                       
                                         
-                                            {console.log(date.split('-')[0]) }
+                                            {/* {console.log(date.split('-')[0]) } */}
                                             <span className='fecha-tuen'>{date.split('-')[0]}</span>
                                      
                                         
@@ -69,8 +67,7 @@ const ListaEventos = ({id, title, image, date, time, buy}) => {
                                 
                             </div>
                         </div>
-                    </div>
-                
+                   
         </>
     )
 }
