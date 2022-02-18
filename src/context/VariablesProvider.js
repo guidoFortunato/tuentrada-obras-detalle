@@ -9,6 +9,7 @@ import portfolio9 from '../img/portfolio9.webp'
 import obras2 from '../img/obras2.webp'
 import obras3 from '../img/obras3.webp'
 import logo from '../img/logo.png'
+import logoTuentrada from '../img/logoTuentrada.png'
 import obras5 from '../img/obras5.webp'
 
 export const VariablesContext = React.createContext()
@@ -24,7 +25,9 @@ const VariablesProvider = (props) => {
         mail: 'consultas@foh-sa.com',
         iframeAlt: 'mapa obras',
         logo: logo,
+        logoTuentrada: logoTuentrada,
         altLogo: "logo obras",
+        altLogoTuen: "logo tuentrada",
         venueName: 'Estadio Obras',
         tuentradaName: 'tuentrada.com',
         linkTuentrada: "https://tuentrada.com",

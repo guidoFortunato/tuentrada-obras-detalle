@@ -196,7 +196,7 @@ const DetalleEvento = (props) => {
                         </p>
                         <div className='container-button'>
                             <button 
-                                    className="btn color-comprar w-25 mb-3 text-white"
+                                    className="btn color-comprar w-25 mb-3 text-white animacion-boton"
                                     onClick={()=>comprar()}
                                 >
                                     <span className='fw-bold'>Comprar</span>
@@ -205,7 +205,7 @@ const DetalleEvento = (props) => {
                         </div>
                         <div className='container-button'>
                             <button 
-                                className="btn w-25 color-volver"
+                                className="btn w-25 color-volver animacion-boton"
                                 onClick={()=>props.history.push('/')}
                             >
                                 <span className='fw-bold'>{variables.volver}</span>

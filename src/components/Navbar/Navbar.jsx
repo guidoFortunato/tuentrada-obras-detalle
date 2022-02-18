@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import {BrowserRouter as Router} from "react-router-dom";
 import { Link } from "react-scroll";
 import { VariablesContext } from '../../context/VariablesProvider'
 
 const Navbar = () => {
 
-    const {variables} = React.useContext(VariablesContext)
+    const {variables} = useContext(VariablesContext)
+    const [navbar, setNavbar] = useState(false);
+
+    const changeBackground = ()=>{
+        
+        if(window.scrollY >= 200){
+            setNavbar(true)
+        }else{
+            setNavbar(false)
+        }
+    }
+
+    window.addEventListener('scroll', changeBackground)
     
   
     return (
@@ -14,10 +26,14 @@ const Navbar = () => {
            
 
             {/* <nav className={scrollNav > 0 ? "navbar navbar-expand-lg navbar-dark bg-dark fixed-top" : "navbar navbar-expand-lg navbar-dark fixed-top"}> */}
-            <nav data-toggle="collapse" className="navbar navbar-expand-lg navbar-dark navbar-active fixed-top">
+            <nav data-toggle="collapse" className={navbar ? "navbar navbar-expand-lg navbar-dark navbar-active fixed-top" : "navbar navbar-expand-lg navbar-dark fixed-top"}>
                 <div className="container">
+
+                        <a href="https://www.tuentrada.com/" target='_blank' rel='noreferrer'>
+                            <img src={variables.logoTuentrada} style={{width: 'auto', height: 'auto'}} alt={variables.altLogoTuen} />
+                        </a>
                     
-                        <img src={variables.logo} style={{width: '125px', height: '40px'}} alt={variables.altLogo} />
+                        {/* <img src={variables.logo} style={{width: '125px', height: '40px'}} alt={variables.altLogo} /> */}
                     
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>

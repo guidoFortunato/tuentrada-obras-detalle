@@ -22,21 +22,7 @@ const Tabla = ({ubicaciones, precioUbi}) => {
                 ))
             }
             
-            {/* <tr>
-                <th>Butacas Preferenciales</th>
-                <td>$1600 + $160</td>
-                
-            </tr>
-            <tr>
-                <th>Preferencial 1 y 2</th>
-                <td>$2000 + $200</td>
-                
-            </tr>
-                <tr>
-                <th>Mesas Central 31 a 42</th>
-                <td>$1700 + $170</td>
-                
-            </tr> */}
+            
         </tbody>
     </table>
   )

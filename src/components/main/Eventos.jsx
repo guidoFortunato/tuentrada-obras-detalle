@@ -56,7 +56,7 @@ const Eventos = (props) => {
                 */
 
                 
-                console.log(data)
+                
                 setEventos(data)
                 
             } catch (err) {
