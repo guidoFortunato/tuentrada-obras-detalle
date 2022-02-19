@@ -92,7 +92,7 @@ const DetalleEvento = (props) => {
                 */
 
                 
-                console.log(data)
+                // console.log(data)
                 setEventos(data)
                 
             } catch (err) {
@@ -116,11 +116,14 @@ const DetalleEvento = (props) => {
     return loading ? <Loader /> : (
         <>
 
-            <nav  className="navbar navbar-expand-lg navbar-dark navbar-active sticky-top">
+            <nav  className="navbar navbar-expand-lg navbar-dark navbar-active sticky-top mb-5">
                 <div className="container">
                     <Link to='/'>
-                        <img className='cursor' src={variables.logo} style={{width: '125px', height: '40px'}}alt={variables.altLogo} />
+                        <img className='cursor' src={variables.logo} style={{width: '277px', height: '89px'}} alt={variables.altLogo} />
                     </Link>
+                    <a href="https://www.tuentrada.com/" target='_blank' rel='noreferrer'>
+                            <img src={variables.logoTuentrada} style={{width: 'auto', height: 'auto'}} alt={variables.altLogoTuen} />
+                    </a>
                     
                     
                     {/* <button 
@@ -134,10 +137,10 @@ const DetalleEvento = (props) => {
             </nav>
 
         
-            <div className="container mt-2 ">
+            <div className="container">
                 <h1 className='titulo-evento-detalle'>Id del evento: {id}</h1> 
                 <hr />
-                <div className="row">
+                <div className="row mb-5">
                     <div className="col-12 col-lg-6 mb-5 mb-lg-0">
                         <img src={rapsodia} alt="imagen evento" className='img-evento' />
                     </div>
@@ -188,7 +191,7 @@ const DetalleEvento = (props) => {
                 </div>
 
                
-                    <div className="col-12 mt-5">
+                    <div className="col-12">
 
                         <h2>Título descripción</h2>
                         <p>
@@ -196,14 +199,14 @@ const DetalleEvento = (props) => {
                         </p>
                         <div className='container-button'>
                             <button 
-                                    className="btn color-comprar w-25 mb-3 text-white animacion-boton"
+                                    className="btn color-comprar w-25 mb-2 text-white animacion-boton"
                                     onClick={()=>comprar()}
                                 >
                                     <span className='fw-bold'>Comprar</span>
                             </button>
                             
                         </div>
-                        <div className='container-button'>
+                        <div className='container-button mb-5'>
                             <button 
                                 className="btn w-25 color-volver animacion-boton"
                                 onClick={()=>props.history.push('/')}
@@ -215,7 +218,7 @@ const DetalleEvento = (props) => {
                     </div>
                
                
-                    <div className="col-12mt-5">
+                    <div className="col-12 mb-5">
 
                         <h2 className='titulo__ubicacion-precios'>Ubicación y precios</h2>
                         <hr className='hr-evento-detalle' />
@@ -225,7 +228,7 @@ const DetalleEvento = (props) => {
 
                         
                     </div>
-                    <div className="col-12 mt-5 mb-5">
+                    <div className="col-12 mb-5">
 
                         <h2 className='titulo__ubicacion-precios'>Elegí tu alojamiento</h2>
                         <hr className='hr-evento-detalle' />

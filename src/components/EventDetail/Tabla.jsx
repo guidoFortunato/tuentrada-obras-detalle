@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Tabla = ({ubicaciones, precioUbi}) => {
-    console.log(ubicaciones)
+    // console.log(ubicaciones)
   return (
     <table className="table">
         <thead className='cabecera-tabla'>
@@ -14,8 +14,8 @@ const Tabla = ({ubicaciones, precioUbi}) => {
         <tbody>
 
             {
-                ubicaciones.map(item => (
-                    <tr>
+                ubicaciones.map((item, index) => (
+                    <tr key={index}>
                         <td className='fw-bold'>{item.ubicacion}</td>
                         <td className='color-precio fw-bold'>${item.precio} + ${item.servicio}</td>
                     </tr>
