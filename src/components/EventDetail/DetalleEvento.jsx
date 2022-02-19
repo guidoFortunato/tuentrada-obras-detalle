@@ -142,7 +142,7 @@ const DetalleEvento = (props) => {
                 <hr />
                 <div className="row mb-5">
                     <div className="col-12 col-lg-6 mb-5 mb-lg-0">
-                        <img src={rapsodia} alt="imagen evento" className='img-evento' />
+                        <img src='https://www.tuentrada.com/images/620bd1f8a9285.webp' alt="imagen evento" className='img-evento' />
                     </div>
                     <div className="col-12 col-lg-6 espacio">
                         <div className="fecha-hora size-datos mb-2">
