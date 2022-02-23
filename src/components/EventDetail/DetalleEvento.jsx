@@ -197,23 +197,7 @@ const DetalleEvento = (props) => {
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Id vero itaque minus aut placeat fugit dolore quod cumque, repudiandae exercitationem eligendi molestias debitis iure. Vitae optio veniam fuga molestias maiores. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit praesentium totam molestias accusamus quibusdam adipisci, possimus a magnam omnis aspernatur veniam dolore perspiciatis debitis reprehenderit excepturi, officia sit, facere rerum?
                         </p>
-                        <div className='container-button'>
-                            <button 
-                                    className="btn color-comprar w-25 mb-2 text-white animacion-boton"
-                                    onClick={()=>comprar()}
-                                >
-                                    <span className='fw-bold'>Comprar</span>
-                            </button>
-                            
-                        </div>
-                        <div className='container-button mb-5'>
-                            <button 
-                                className="btn w-25 color-volver animacion-boton"
-                                onClick={()=>props.history.push('/')}
-                            >
-                                <span className='fw-bold'>{variables.volver}</span>
-                            </button>                            
-                        </div>
+                        
                         
                     </div>
                
@@ -224,6 +208,43 @@ const DetalleEvento = (props) => {
                         <hr className='hr-evento-detalle' />
 
                        <Tabla ubicaciones={ubicaciones} />
+
+
+                        
+                    </div>
+                        <div className='container-button mb-5'>
+                            <button 
+                                    className="btn color-comprar ancho-button mb-2 text-white animacion-boton"
+                                    onClick={()=>comprar()}
+                                >
+                                    <span className='fw-bold'>Comprar</span>
+                            </button>
+                            
+                        
+                        
+                            <button 
+                                className="btn color-volver ancho-button animacion-boton"
+                                onClick={()=>props.history.push('/')}
+                            >
+                                <span className='fw-bold'>{variables.volver}</span>
+                            </button>                            
+                        </div>
+
+
+                    <div className="col-12 mb-5">
+
+                        <h2 className='titulo__ubicacion-precios'>Completá tu experiencia reservando el hospedaje</h2>
+                        <hr className='hr-evento-detalle' />
+
+                        <ul>
+        
+                            <li>Tenemos la mejor variedad de ofertas para que elijas tu mejor opción.</li>
+                            <li>Visualizá el show en el mapa, buscá las opciones cercanas y podrás comenzar con la reserva de tu alojamiento, fácil y rápido.</li>
+        
+                        </ul>
+    
+
+                       
 
 
                         
