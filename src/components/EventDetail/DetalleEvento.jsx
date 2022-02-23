@@ -92,7 +92,7 @@ const DetalleEvento = (props) => {
                 */
 
                 
-                console.log(data)
+                // console.log(data)
                 setEventos(data)
                 
             } catch (err) {
@@ -116,11 +116,14 @@ const DetalleEvento = (props) => {
     return loading ? <Loader /> : (
         <>
 
-            <nav  className="navbar navbar-expand-lg navbar-dark navbar-active sticky-top">
+            <nav  className="navbar navbar-expand-lg navbar-dark navbar-active sticky-top mb-5">
                 <div className="container">
                     <Link to='/'>
-                        <img className='cursor' src={variables.logo} style={{width: '125px', height: '40px'}}alt={variables.altLogo} />
+                        <img className='cursor' src={variables.logo} style={{width: '277px', height: '89px'}} alt={variables.altLogo} />
                     </Link>
+                    <a href="https://www.tuentrada.com/" target='_blank' rel='noreferrer'>
+                            <img src={variables.logoTuentrada} style={{width: 'auto', height: 'auto'}} alt={variables.altLogoTuen} />
+                    </a>
                     
                     
                     {/* <button 
@@ -134,12 +137,12 @@ const DetalleEvento = (props) => {
             </nav>
 
         
-            <div className="container mt-2 ">
+            <div className="container">
                 <h1 className='titulo-evento-detalle'>Id del evento: {id}</h1> 
                 <hr />
-                <div className="row">
+                <div className="row mb-5">
                     <div className="col-12 col-lg-6 mb-5 mb-lg-0">
-                        <img src={rapsodia} alt="imagen evento" className='img-evento' />
+                        <img src='https://www.tuentrada.com/images/620bd1f8a9285.webp' alt="imagen evento" className='img-evento' />
                     </div>
                     <div className="col-12 col-lg-6 espacio">
                         <div className="fecha-hora size-datos mb-2">
@@ -188,34 +191,18 @@ const DetalleEvento = (props) => {
                 </div>
 
                
-                    <div className="col-12 mt-5">
+                    <div className="col-12">
 
                         <h2>Título descripción</h2>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Id vero itaque minus aut placeat fugit dolore quod cumque, repudiandae exercitationem eligendi molestias debitis iure. Vitae optio veniam fuga molestias maiores. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit praesentium totam molestias accusamus quibusdam adipisci, possimus a magnam omnis aspernatur veniam dolore perspiciatis debitis reprehenderit excepturi, officia sit, facere rerum?
                         </p>
-                        <div className='container-button'>
-                            <button 
-                                    className="btn color-comprar w-25 mb-3 text-white animacion-boton"
-                                    onClick={()=>comprar()}
-                                >
-                                    <span className='fw-bold'>Comprar</span>
-                            </button>
-                            
-                        </div>
-                        <div className='container-button'>
-                            <button 
-                                className="btn w-25 color-volver animacion-boton"
-                                onClick={()=>props.history.push('/')}
-                            >
-                                <span className='fw-bold'>{variables.volver}</span>
-                            </button>                            
-                        </div>
+                        
                         
                     </div>
                
                
-                    <div className="col-12mt-5">
+                    <div className="col-12 mb-5">
 
                         <h2 className='titulo__ubicacion-precios'>Ubicación y precios</h2>
                         <hr className='hr-evento-detalle' />
@@ -225,7 +212,44 @@ const DetalleEvento = (props) => {
 
                         
                     </div>
-                    <div className="col-12 mt-5 mb-5">
+                        <div className='container-button mb-5'>
+                            <button 
+                                    className="btn color-comprar ancho-button mb-2 text-white animacion-boton"
+                                    onClick={()=>comprar()}
+                                >
+                                    <span className='fw-bold'>Comprar</span>
+                            </button>
+                            
+                        
+                        
+                            <button 
+                                className="btn color-volver ancho-button animacion-boton"
+                                onClick={()=>props.history.push('/')}
+                            >
+                                <span className='fw-bold'>{variables.volver}</span>
+                            </button>                            
+                        </div>
+
+
+                    <div className="col-12 mb-5">
+
+                        <h2 className='titulo__ubicacion-precios'>Completá tu experiencia reservando el hospedaje</h2>
+                        <hr className='hr-evento-detalle' />
+
+                        <ul>
+        
+                            <li>Tenemos la mejor variedad de ofertas para que elijas tu mejor opción.</li>
+                            <li>Visualizá el show en el mapa, buscá las opciones cercanas y podrás comenzar con la reserva de tu alojamiento, fácil y rápido.</li>
+        
+                        </ul>
+    
+
+                       
+
+
+                        
+                    </div>
+                    <div className="col-12 mb-5">
 
                         <h2 className='titulo__ubicacion-precios'>Elegí tu alojamiento</h2>
                         <hr className='hr-evento-detalle' />
