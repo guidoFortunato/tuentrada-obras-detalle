@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import {
     BrowserRouter as Router,
     
+    HashRouter,
+    
     Route,
     Switch
   
@@ -35,14 +37,14 @@ function App() {
     <>
     <VariablesProvider>
 
-      <Router basename='/estadio/obras'>
+      <HashRouter>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/:id" component={DetalleEvento} />
           <Route path="*" component={Error404} />        
         </Switch>
 
-      </Router>
+      </HashRouter>
     </VariablesProvider>
     </>
 
