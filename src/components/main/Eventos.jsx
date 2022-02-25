@@ -78,11 +78,11 @@ const Eventos = (props) => {
     return  loading ? <Loader /> : (
         
             <main id="main">
-                <section id="team">
+                <section id="team" className='dark-color'>
                     <div className="container wow fadeInUp">
                         <div className="row">
                             <div className="col-md-12">
-                                <h3 className="section-title">{variables.tituloEventos}</h3>
+                                <h3 className="section-title dark-color-title">{variables.tituloEventos}</h3>
                                 <div className="section-title-divider"></div>                          
                             
                         

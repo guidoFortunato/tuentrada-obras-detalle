@@ -8,14 +8,14 @@ const SectionHistoria = () => {
     return (
         <>
           
-                <section id="about">
+                <section id="about" className='dark-color'>
                     <div className="container wow fadeInUp">
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="col-md-12">
-                                <h2 className="section-title">{variables.tituloHistoriaArriba}</h2>
+                                <h2 className="section-title dark-color-title">{variables.tituloHistoriaArriba}</h2>
                                 <div className="section-title-divider"></div>
-                                <h4 className="section-title" align="center">{variables.tituloHistoriaAbajo}</h4>
+                                <h4 className="section-title dark-color-title" align="center">{variables.tituloHistoriaAbajo}</h4>
                                 </div>
                             </div>
                         </div>
@@ -28,7 +28,7 @@ const SectionHistoria = () => {
                                 <img src={variables.imagenHistoria} alt={variables.venueName} />
                             </div>
 
-                            <div className="col-12 col-lg-6 about-content">
+                            <div className="col-12 col-lg-6 about-content dark-color">
                                 <p className="about-text">
                                     {variables.descripcion1}
                                 </p>

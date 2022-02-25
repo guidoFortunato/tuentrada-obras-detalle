@@ -9,12 +9,12 @@ const Imagenes = () => {
     return (
         <>
           
-            <section id="portfolio">
+            <section id="portfolio" className='dark-color'>
                 <div className="container wow fadeInUp">
                     <div className="row">
                         <div className="col-md-12">
                             <div className="col-md-12">
-                                <h3 className="section-title">{variables.tituloImagenes}</h3>
+                                <h3 className="section-title dark-color-title">{variables.tituloImagenes}</h3>
                                 <div className="section-title-divider"></div>
                             </div>
                         </div>
