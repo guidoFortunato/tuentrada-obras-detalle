@@ -84,7 +84,7 @@ const DetalleEvento = (props) => {
     //  Dia
     //  const fecha = eventos.date.split(' ')[0]
     //  console.log('fecha' + fecha)
-     const daysNames = ['LUN','MAR','MIER','JUE','VIER','SAB','DOM'];
+     const daysNames = ['LUNES','MARTES','MIERCOLES','JUEVES','VIERNES','SABADO','DOMINGO'];
     //  const numeroDia = new Date(fechaCambioFormato).getDay()
  
     
@@ -210,12 +210,14 @@ const DetalleEvento = (props) => {
                         <div className="fecha-hora size-datos mb-2">
                             <i className="bi bi-calendar-check color-icono me-2"></i>
                             <span className='fecha-hora__color-texto'>Fecha:</span>
-                            <span className='ms-1'>{eventos.date.split(' ')[0]}</span>
+                            <span className='ms-1'>
+                                {eventos.date.split(' ')[0].split('-')[2]}-{eventos.date.split(' ')[0].split('-')[1]}-{eventos.date.split(' ')[0].split('-')[0]}
+                            </span>
                         </div>
                         <div className="fecha-hora size-datos mb-2">
                             <i className="bi bi-clock-history color-icono me-2"></i>
                             <span className='fecha-hora__color-texto'>Hora:</span>
-                            <span className='ms-1'>{eventos.hour} hs</span>
+                            <span className='ms-1'>{eventos.hour}hs</span>
                         </div>
 
                         {
