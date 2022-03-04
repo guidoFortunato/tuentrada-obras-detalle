@@ -11,11 +11,11 @@ const Contacto = () => {
     return (
         <>
            
-                <section id="contact">
+                <section id="contact" className='dark-color'>
                         <div className="container wow fadeInUp">
                             <div className="row">
                                 <div className="col-md-12">
-                                    <h3 className="section-title">{variables.tituloUbicacion}</h3>
+                                    <h3 className="section-title dark-color-title">{variables.tituloUbicacion}</h3>
                                     <div className="section-title-divider"></div>
                                     
                                 </div>
@@ -40,7 +40,7 @@ const Contacto = () => {
                                         <div className="logos">
                                             
                                                 <i className="bi bi-geo-alt-fill margin-icono-ubicacion"></i> 
-                                                <div className='ms-3'>{variables.direccion}</div>
+                                                <div className='ms-3 dark-color-title'>{variables.direccion}</div>
                                                 
 
                                         </div>

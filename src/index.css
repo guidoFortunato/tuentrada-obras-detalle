@@ -164,7 +164,7 @@ hr:not([size]) {
     font-weight: 700;
     line-height: 48px;
     text-transform: uppercase;
-    color: #fff; /*  #4D9B87 */
+    color: #eee; /*  #4D9B87 */
   }
   
   @media (max-width: 768px) {
@@ -1819,6 +1819,36 @@ hr:not([size]) {
   .color-precio{
     color: var(--color-magenta);
   }
+
+
+
+  /*dark mode*/
+
+  
+/* 
+  .dark-color{
+    background-color: #1a1818 !important;
+    color: #EEEEEE;    
+  }
+
+  .dark-color-cards{
+    background-color: #000000 !important;
+    color: #EEEEEE;    
+  }
+  .dark-color-contacto{
+    background-color: #252626 !important;
+    color: #EEEEEE;    
+  }
+
+  .dark-color-title{
+    color: #EEEEEE !important;
+  }
+
+
+  .dark-scale:hover{
+    transform: scale(1.02);    
+  } */
+  
   
 
  
