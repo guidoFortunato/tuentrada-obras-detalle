@@ -1849,24 +1849,63 @@ hr:not([size]) {
     transform: scale(1.02);    
   } */
   
-  
-
- 
-
-  
-
-
-  
-
-  
-
-
- 
-
-
-
-
   /*****************************************************/
+
+  /*card fecha detalle evento*/
+
+  .card-detalle{
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #d6d6d6;
+    box-shadow: 0 3px 5px rgb(0 0 0 / 16%);
+    border-radius: 5px;
+    
+    font-size: .8em;
+    
+  }
+
+  .hr-card-detalle{
+    width: 110px;
+    margin: 3px 0 3px 0;
+    /* height: 6px !important; */
+    background: #b7b7b7;
+  }
+
+  .card-detalle__tamaño-numero{
+    font-size: 2em;
+    color: var(--color-magenta);
+  }
+  .card-detalle__tamaño-letra{
+    font-size: 1em;
+    
+  }
+
+
+
+
+
+
+  /****/
+  
+
+ 
+
+  
+
+
+  
+
+  
+
+
+ 
+
+
+
+
 
  
 

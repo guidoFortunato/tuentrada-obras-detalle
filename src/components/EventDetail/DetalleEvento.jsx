@@ -141,7 +141,66 @@ const DetalleEvento = (props) => {
                     <div className="col-12 col-lg-6 mb-5 mb-lg-0">
                         <img src={`https://www.tuentrada.com${eventos.imange_900x800}`} alt="imagen evento" className='img-evento' />
                     </div>
+                        
                     <div className="col-12 col-lg-6 espacio">
+
+
+                        <div className="card-detalle px-1 py-2 mb-5">
+
+                           
+
+                            
+                                    
+                                
+                                    {/* <span className='fw-bold'>SAB</span> */}
+                                    {/* <span className='fw-bold'>{daysNames[numeroDia]}</span> */}
+                                    <div>
+                                        <span className='fw-bold card-detalle__tamaño-letra'>SAB</span>
+                                    </div>
+                                    
+                            
+                            
+                                
+                                    {/* {console.log(date.split('-')[0]) } */}
+                                    {/* <span className='fecha-tuen'>{date.split('-')[0]}</span> */}
+                                    <div>
+                                        <span className='fw-bold card-detalle__tamaño-numero'>05</span>
+                                    </div>
+                                    
+                            
+                                
+                                
+                                    
+                                    {/* <span className='fw-bold'> {monthNames[numeroMes]} 20{date.split('-')[2]}</span> */}
+                                    <div>
+                                        <span className='fw-bold card-detalle__tamaño-letra'>MAR 2022</span>
+                                    </div>
+                                    
+
+                                    <hr className='hr-card-detalle' />
+
+                                    <div>
+                                        <span className='fw-bold card-detalle__tamaño-letra'>21:00hs</span>
+                                    </div>
+                                    
+
+                                
+
+                           
+
+
+
+                        </div>
+
+
+
+
+                        <div>
+                            <h3>Información general</h3>
+                        </div>
+
+
+
                         <div className="fecha-hora size-datos mb-2">
                             {/* <i className="bi bi-calendar2-check-fill color-icono me-2"></i> */}
                             <i className="bi bi-geo-alt-fill color-icono me-2"></i>
@@ -163,11 +222,19 @@ const DetalleEvento = (props) => {
                             <span className='fecha-hora__color-texto'>Hora:</span>
                             <span className='ms-1'>{eventos.hour} hs</span>
                         </div>
+
+                        {
+                        eventos.subcategory ? 
                         <div className="fecha-hora size-datos mb-2">
                             <i className="bi bi-grid color-icono me-2"></i>
                             <span className='fecha-hora__color-texto'>Categoría:</span>
                             <span className='ms-1'>{eventos.subcategory}</span>
-                        </div>
+                        </div> : null
+                        }
+
+                        
+
+
                         <div className="fecha-hora size-datos mb-2">
                             <i className="bi bi-geo-alt-fill color-icono me-2"></i>
                             <span className='fecha-hora__color-texto'>Dirección:</span>

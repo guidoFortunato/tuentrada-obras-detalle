@@ -98,7 +98,7 @@ const Eventos = (props) => {
                          
                             
                             { eventos.length > 0 ? eventos.map( item => (
-                                <div className="col-12 col-sm-6 col-md-4 col-lg-3 text-center mt-2 mb-2" key={item.id}>
+                                <div className="col-12 col-sm-6 col-lg-4 col-xl-3 text-center mt-2 mb-2" key={item.id}>
                                     <ListaEventos 
                                         id={item.id} 
                                         title={item.title} 
