@@ -93,8 +93,7 @@ const Eventos = (props) => {
                         <div className="row">
                             
 
-                            
-
+                            {console.log(eventos)}
                          
                             
                             { eventos.length > 0 ? eventos.map( item => (

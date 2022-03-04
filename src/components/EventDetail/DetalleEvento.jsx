@@ -16,39 +16,10 @@ const DetalleEvento = (props) => {
     const [eventos, setEventos] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null)
-    
-
-
     const {variables} = React.useContext(VariablesContext)
-
-    // const ubicaciones = ['Butaca preferencial', 'Preferencial 1 y 2', 'Mesas centrales']
-    // const ubicaciones = [
-    //     {
-    //     ubicacion: 'Butaca preferencial',
-    //     precio: '1600',
-    //     servicio: '160'
-    //     },
-    //     {
-    //     ubicacion: 'Preferencial 1 y 2',
-    //     precio: '1500',
-    //     servicio: '150'
-    //     },
-    //     {
-    //     ubicacion: 'Mesas centrales',
-    //     precio: '1200',
-    //     servicio: '120'
-    //     },
-        
-    // ]
-    // const precioUbi = ['1600 + 160', '1500 + 150', '1200 + 120']
-
-
-
     const {id} = useParams()
 
-   
     
-
     useEffect(()=>{
         setLoading(true)
 
@@ -110,9 +81,27 @@ const DetalleEvento = (props) => {
 
 
 
+    //  Dia
+    //  const fecha = eventos.date.split(' ')[0]
+    //  console.log('fecha' + fecha)
+     const daysNames = ['LUN','MAR','MIER','JUE','VIER','SAB','DOM'];
+    //  const numeroDia = new Date(fechaCambioFormato).getDay()
+ 
+    
+     
+    //  Mes
+     const monthNames = ["ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC"];
+    //  const numeroMes = Number(date.split('-')[1] - 1)
+
+   
+    
+
+
+
+
     return loading ? <Loader /> : (
         <>
-
+        {console.log(eventos)}
             <nav  className="navbar navbar-expand-lg navbar-dark navbar-active sticky-top mb-5">
                 <div className="container">
                     <Link to='/'>
@@ -155,7 +144,11 @@ const DetalleEvento = (props) => {
                                     {/* <span className='fw-bold'>SAB</span> */}
                                     {/* <span className='fw-bold'>{daysNames[numeroDia]}</span> */}
                                     <div>
-                                        <span className='fw-bold card-detalle__tamaño-letra'>SAB</span>
+                                        <span className='fw-bold card-detalle__tamaño-letra'>
+                                            {
+                                                 daysNames[new Date(eventos.date.split(' ')[0]).getDay()]
+                                            }
+                                        </span>
                                     </div>
                                     
                             
@@ -164,7 +157,7 @@ const DetalleEvento = (props) => {
                                     {/* {console.log(date.split('-')[0]) } */}
                                     {/* <span className='fecha-tuen'>{date.split('-')[0]}</span> */}
                                     <div>
-                                        <span className='fw-bold card-detalle__tamaño-numero'>05</span>
+                                        <span className='fw-bold card-detalle__tamaño-numero'>{eventos.date.split('-')[2].split(' ')[0]}</span>
                                     </div>
                                     
                             
@@ -173,14 +166,16 @@ const DetalleEvento = (props) => {
                                     
                                     {/* <span className='fw-bold'> {monthNames[numeroMes]} 20{date.split('-')[2]}</span> */}
                                     <div>
-                                        <span className='fw-bold card-detalle__tamaño-letra'>MAR 2022</span>
+                                        <span className='fw-bold card-detalle__tamaño-letra'>
+                                            {monthNames[Number(eventos.date.split('-')[1] - 1)]} {eventos.date.split('-')[0]}
+                                        </span>
                                     </div>
                                     
 
                                     <hr className='hr-card-detalle' />
 
                                     <div>
-                                        <span className='fw-bold card-detalle__tamaño-letra'>21:00hs</span>
+                                        <span className='fw-bold card-detalle__tamaño-letra'>{eventos.hour}hs</span>
                                     </div>
                                     
 
@@ -224,12 +219,12 @@ const DetalleEvento = (props) => {
                         </div>
 
                         {
-                        eventos.subcategory ? 
-                        <div className="fecha-hora size-datos mb-2">
-                            <i className="bi bi-grid color-icono me-2"></i>
-                            <span className='fecha-hora__color-texto'>Categoría:</span>
-                            <span className='ms-1'>{eventos.subcategory}</span>
-                        </div> : null
+                            eventos.subcategory ? 
+                            <div className="fecha-hora size-datos mb-2">
+                                <i className="bi bi-grid color-icono me-2"></i>
+                                <span className='fecha-hora__color-texto'>Categoría:</span>
+                                <span className='ms-1'>{eventos.subcategory}</span>
+                            </div> : null
                         }
 
                         
@@ -240,12 +235,13 @@ const DetalleEvento = (props) => {
                             <span className='fecha-hora__color-texto'>Dirección:</span>
                             <span className='ms-1'>{eventos.address}</span>
                         </div>
-                        {eventos.openDoors ? 
-                        <div className="fecha-hora size-datos mb-4">
-                            <i className="bi bi-door-open color-icono me-2"></i>
-                            <span className='fecha-hora__color-texto'>Apertura puertas:</span>
-                            <span className='ms-1'></span>
-                        </div> : null
+                        {
+                            eventos.openDoors ? 
+                            <div className="fecha-hora size-datos mb-4">
+                                <i className="bi bi-door-open color-icono me-2"></i>
+                                <span className='fecha-hora__color-texto'>Apertura puertas:</span>
+                                <span className='ms-1'></span>
+                            </div> : null
                         }
                         
                         

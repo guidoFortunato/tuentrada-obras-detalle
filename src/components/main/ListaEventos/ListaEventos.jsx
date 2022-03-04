@@ -6,6 +6,7 @@ const ListaEventos = ({id, title, image, date, time, buy}) => {
 
     //Dia
     const fechaCambioFormato = 20 + date.split('-')[2]+ '-' + date.split('-')[1] + '-' + date.split('-')[0]
+    
     const daysNames = ['LUN','MAR','MIER','JUE','VIER','SAB','DOM'];
     const numeroDia = new Date(fechaCambioFormato).getDay()
 
@@ -14,6 +15,7 @@ const ListaEventos = ({id, title, image, date, time, buy}) => {
     // Mes
     const monthNames = ["ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC"];
     const numeroMes = Number(date.split('-')[1] - 1)
+    console.log(date)
 
     return (
         <>                                       
@@ -34,7 +36,7 @@ const ListaEventos = ({id, title, image, date, time, buy}) => {
                                             
                                         
                                             {/* <span className='fw-bold'>SAB</span> */}
-                                            <span className='fw-bold'>{daysNames[numeroDia]}</span>
+                                            <span className='fw-bold tamaño-letra-fecha'>{daysNames[numeroDia]}</span>
                                             
                                        
                                       
@@ -45,7 +47,7 @@ const ListaEventos = ({id, title, image, date, time, buy}) => {
                                         
                                         
                                             
-                                            <span className='fw-bold'> {monthNames[numeroMes]} 20{date.split('-')[2]}</span>
+                                            <span className='fw-bold tamaño-letra-fecha'> {monthNames[numeroMes]} 20{date.split('-')[2]}</span>
                                         
 
                                     </div>
