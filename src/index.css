@@ -1825,7 +1825,7 @@ hr:not([size]) {
   /*dark mode*/
 
   
-
+/* 
   .dark-color{
     background-color: #1a1818 !important;
     color: #EEEEEE;    
@@ -1847,7 +1847,7 @@ hr:not([size]) {
 
   .dark-scale:hover{
     transform: scale(1.02);    
-  }
+  } */
   
   
 
