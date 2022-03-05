@@ -282,6 +282,18 @@ hr:not([size]) {
     background: rgba(0, 0, 0, 0.80);
   }
 
+  @media (max-width: 497px) {
+    .nav-direction{
+      flex-direction: column;
+    }
+    .separacion-logo{
+      margin-bottom: 20px;
+    }
+    
+  }
+
+
+
 
 
 
@@ -1883,12 +1895,26 @@ hr:not([size]) {
     
   }
 
-
-
-
-
-
   /****/
+
+  /*iframe*/
+
+  .iframe{
+    width: 100%;
+  }
+
+  @media screen and (min-width: 1200px) {
+    
+    .iframe{
+      width: 70%;
+      
+    }
+    
+  }
+
+
+
+  /***/
   
 
  

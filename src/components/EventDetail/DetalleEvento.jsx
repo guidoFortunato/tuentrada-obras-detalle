@@ -8,6 +8,7 @@ import Loader from '../main/Loader/Loader';
 import Tabla from './Tabla'
 import Alojamiento from './Alojamiento'
 import DOMPurify from 'dompurify'
+import LinksRedes from './LinksRedes';
 
 
 
@@ -101,11 +102,11 @@ const DetalleEvento = (props) => {
 
     return loading ? <Loader /> : (
         <>
-        {console.log(eventos)}
+        
             <nav  className="navbar navbar-expand-lg navbar-dark navbar-active sticky-top mb-5">
-                <div className="container">
+                <div className="container nav-direction">
                     <Link to='/'>
-                        <img className='cursor' src={variables.logo} style={{width: '277px', height: '89px'}} alt={variables.altLogo} />
+                        <img className='cursor separacion-logo' src={variables.logo} style={{width: '277px', height: '89px'}} alt={variables.altLogo} />
                     </Link>
                     <a href="https://www.tuentrada.com/" target='_blank' rel='noreferrer'>
                             <img src={variables.logoTuentrada} style={{width: 'auto', height: 'auto'}} alt={variables.altLogoTuen} />
@@ -299,6 +300,16 @@ const DetalleEvento = (props) => {
                         </div>
 
 
+                    
+
+                    { eventos &&  <LinksRedes info={eventos} /> }
+                    
+
+                       
+
+
+                        
+                    
                     <div className="col-12 mb-5">
 
                         <h2 className='titulo__ubicacion-precios'>Completá tu experiencia reservando el hospedaje</h2>
