@@ -1,6 +1,6 @@
 import React from 'react'
 import facebook from '../../img/facebook.png'
-import twitter from '../../img/twitter.png'
+// import twitter from '../../img/twitter.png'
 import instagram from '../../img/instagram.png'
 
 const LinksRedes = ({info}) => {
@@ -51,9 +51,11 @@ const LinksRedes = ({info}) => {
                 : <iframe 
                 title={info.name}
                 className='iframe'
-                height="80" 
+                style={{"borderRadius":"12px","height":"80px" }}
                 src={info.linkSpotify}
                 frameBorder="0"
+                allowFullScreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 >
                   </iframe>
                 
@@ -75,6 +77,8 @@ const LinksRedes = ({info}) => {
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 >
                   </iframe>
+
+
                 
             }
         </div>

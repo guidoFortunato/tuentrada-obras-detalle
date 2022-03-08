@@ -1589,13 +1589,13 @@ hr:not([size]) {
     }
 
     .fecha-hora__color-texto{
-      color: #a28200;
+      color: var(--color-magenta); /*#a28200*/
       font-weight: 700;
     }
 
 
     .color-icono{
-      color: #a28200;
+      color: var(--color-magenta); /*#a28200*/
     }
 
     .logo-consultas{
@@ -1796,6 +1796,7 @@ hr:not([size]) {
   .titulo-evento-detalle{
     display: block;
     margin-bottom: 20px;
+    color: var(--color-magenta);
   }
 
 
