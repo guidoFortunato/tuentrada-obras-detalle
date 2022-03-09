@@ -2,7 +2,7 @@ import React from 'react'
 
 const Alojamiento = ({info}) => {
 
-  console.log(info)
+  // console.log(info)
   
   const arrayDiasIn = []
   // const arrayDiasOut = []

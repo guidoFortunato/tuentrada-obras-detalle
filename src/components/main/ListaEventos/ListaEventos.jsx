@@ -15,7 +15,7 @@ const ListaEventos = ({id, title, image, date, time, buy}) => {
     // Mes
     const monthNames = ["ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC"];
     const numeroMes = Number(date.split('-')[1] - 1)
-    console.log(date)
+    
 
     return (
         <>                                       

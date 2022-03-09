@@ -20,7 +20,7 @@ const Eventos = (props) => {
         setLoading(true)
 
         const getData = async ()=>{
-            const url = 'https://api.tuentrada.com/api/venue?venue=obras'
+            const url = ''
             const token = '3|ruU31fAttxU0FKWmvV8pdB1GCyhQa7lNAQwBfEVb'
 
             try {
