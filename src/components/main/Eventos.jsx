@@ -14,14 +14,15 @@ const Eventos = (props) => {
     const [loading, setLoading] = useState(true);
     const {variables} = React.useContext(VariablesContext)
 
+    const url = process.env.REACT_APP_API_OBRAS
+    const token = process.env.REACT_APP_TOKEN_OBRAS
+
 
 
     React.useEffect(()=>{
         setLoading(true)
 
         const getData = async ()=>{
-            const url = 'https://api.tuentrada.com/api/venue?venue=obras'
-            const token = '3|ruU31fAttxU0FKWmvV8pdB1GCyhQa7lNAQwBfEVb'
 
             try {
                 const res = await fetch(url, {
@@ -72,7 +73,7 @@ const Eventos = (props) => {
         }
         
         getData()
-    }, [])
+    }, [token, url])
 
 
     return  loading ? <Loader /> : (
