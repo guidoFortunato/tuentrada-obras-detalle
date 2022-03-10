@@ -82,7 +82,7 @@ const DetalleEvento = (props) => {
     }, [id])
 
 
-
+    console.log(eventos)
 
     //  Dia
     //  const fecha = eventos.date.split(' ')[0]
@@ -131,7 +131,7 @@ const DetalleEvento = (props) => {
                 <hr />
                 <div className="row mb-5">
                     <div className="col-12 col-lg-6 mb-5 mb-lg-0">
-                        <img src={`https://www.tuentrada.com${eventos.imange_900x800}`} alt="imagen evento" className='img-evento' />
+                        <img src={`https://www.tuentrada.com${eventos.imageEvent}`} alt="imagen evento" className='img-evento' />
                     </div>
                         
                     <div className="col-12 col-lg-6 espacio">

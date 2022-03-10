@@ -43,7 +43,7 @@ const Alojamiento = ({info}) => {
   return (
     <iframe
     title={info.venue}
-    src={`https://www.stay22.com/embed/gm?aid=tuentradaar&lat=${info.latitude}&lng=${info.longitude}&venue=Estadio Obras&checkin=${fechaAyer}&checkout=${fechaMañana}&maincolor=e10165&markerimage=https://www.tuentrada.com${info.image_125x125}&disableservices=restaurant`}
+    src={`https://www.stay22.com/embed/gm?aid=tuentradaar&lat=${info.latitude}&lng=${info.longitude}&venue=Estadio Obras&checkin=${fechaAyer}&checkout=${fechaMañana}&maincolor=e10165&markerimage=https://www.tuentrada.com${info.imageThumbnail}&disableservices=restaurant`}
     id="stay22-widget" 
     width="100%" 
     height="600" 

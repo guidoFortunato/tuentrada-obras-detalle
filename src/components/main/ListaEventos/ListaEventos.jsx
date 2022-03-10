@@ -4,6 +4,8 @@ import './listaEventos.css'
 
 const ListaEventos = ({id, title, image, date, time, buy}) => {
 
+    
+
     //Dia
     const fechaCambioFormato = 20 + date.split('-')[2]+ '-' + date.split('-')[1] + '-' + date.split('-')[0]
     
@@ -20,7 +22,8 @@ const ListaEventos = ({id, title, image, date, time, buy}) => {
     return (
         <>                                       
                     
-                        <div className="card dark-color-cards dark-scale">                                            
+                        <div className="card dark-color-cards dark-scale">
+                            
                             <img src={`https://tuentrada.com/${image}`} className="card-img-top" alt={title} />
                             <div className="card-body">                                                
                                 <h6 className='card-title'>{title}</h6>

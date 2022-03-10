@@ -40,7 +40,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/:id" component={DetalleEvento} />
-          <Route path="*" component={Error404} />        
+          <Route path="*" component={Home} />        
         </Switch>
 
       </HashRouter>

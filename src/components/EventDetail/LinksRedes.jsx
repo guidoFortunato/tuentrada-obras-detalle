@@ -1,13 +1,13 @@
 import React from 'react'
 import facebook from '../../img/facebook.png'
-// import twitter from '../../img/twitter.png'
+import twitter from '../../img/twitter.png'
 import instagram from '../../img/instagram.png'
 
 const LinksRedes = ({info}) => {
     
 
 
-  return info.linkFacebook.length > 1 || info.linkInstagram.length > 1 || info.linkSpotify.length > 1 || info.linkYoutube.length > 1 ? (
+  return info.facebook.length > 1 || info.twitter.length > 1 ||info.instagram.length > 1 || info.spotify.length > 1 || info.youtube.length > 1 ? (
 
     <div className="col-12 mb-5">
 
@@ -18,25 +18,25 @@ const LinksRedes = ({info}) => {
         <div className="d-flex">
 
             {
-                (info.linkFacebook.length === 1 && info.linkFacebook === '-') || info.linkFacebook === ''
+                (info.facebook.length === 1 && info.facebook === '-') || info.facebook === ''
                 ? null 
-                : info.linkFacebook === undefined ? null 
-                : <a href={info.linkFacebook} target='_blank' rel="noreferrer" className='me-3'><img src={facebook} alt="facebook" /></a>
+                : info.facebook === undefined ? null 
+                : <a href={info.facebook} target='_blank' rel="noreferrer" className='me-3'><img src={facebook} alt="facebook" /></a>
             }
             
             {
-                (info.linkInstagram.length === 1 && info.linkInstagram === '-') || info.linkInstagram === ''
+                (info.instagram.length === 1 && info.instagram === '-') || info.instagram === ''
                 ? null 
-                : info.linkInstagram === undefined ? null 
-                : <a href={info.linkInstagram} target='_blank' rel="noreferrer" className='me-3'><img src={instagram} alt="instagram" /></a>
+                : info.instagram === undefined ? null 
+                : <a href={info.instagram} target='_blank' rel="noreferrer" className='me-3'><img src={instagram} alt="instagram" /></a>
                 
             }
-            {/* {
-                (info.linkTwitter.length === 1 && info.linkTwitter === '-') || info.linkTwitter === ''
+            {
+                (info.twitter.length === 1 && info.twitter === '-') || info.twitter === ''
                 ? null 
-                : info.linkTwitter === undefined ? null 
-                : <a href={info.linkTwitter} target='_blank' rel="noreferrer" className='me-2'><img src={twitter} alt="twitter" /></a>
-            } */}
+                : info.twitter === undefined ? null 
+                : <a href={info.twitter} target='_blank' rel="noreferrer" className='me-2'><img src={twitter} alt="twitter" /></a>
+            }
               
             
 
@@ -45,14 +45,14 @@ const LinksRedes = ({info}) => {
         <div>
            
             {
-                (info.linkSpotify.length === 1 && info.linkSpotify === '-') || info.linkSpotify === ''
+                (info.spotify.length === 1 && info.spotify === '-') || info.spotify === ''
                 ? null 
-                : info.linkSpotify === undefined ? null 
+                : info.spotify === undefined ? null 
                 : <iframe 
                 title={info.name}
                 className='iframe'
                 style={{"borderRadius":"12px","height":"80px" }}
-                src={info.linkSpotify}
+                src={info.spotify}
                 frameBorder="0"
                 allowFullScreen=""
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
@@ -64,14 +64,14 @@ const LinksRedes = ({info}) => {
         <div>
 
             {
-                (info.linkYoutube.length === 1 && info.linkYoutube === '-') || info.linkYoutube === ''
+                (info.youtube.length === 1 && info.youtube === '-') || info.youtube === ''
                 ? null 
-                : info.linkYoutube === undefined ? null 
+                : info.youtube === undefined ? null 
                 : <iframe 
                 title={info.name}
                 className='iframe'
                 height="425" 
-                src={info.linkYoutube}
+                src={info.youtube}
                 frameBorder="0"
                 allowFullScreen="allowfullscreen"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
