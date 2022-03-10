@@ -53,7 +53,7 @@ const VariablesProvider = (props) => {
         elementoNavbar2: 'Historia',
         elementoNavbar3: 'Obras',
         elementoNavbar4: 'Ubicacion',
-        tituloInicio: 'Bienvenidos al Templo del ROCK',
+        tituloInicio: 'El Templo del ROCK',
         botonInicio: 'SHOWS',
         tituloHistoriaArriba: '40 AÑOS DE HISTORIA',
         tituloHistoriaAbajo: 'DEL TEMPLO DEL ROCK',

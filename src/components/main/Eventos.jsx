@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { VariablesContext } from '../../context/VariablesProvider'
 import MessageError from '../error/MessageError';
 import ListaEventos from './ListaEventos/ListaEventos';
@@ -19,7 +19,7 @@ const Eventos = (props) => {
 
 
 
-    React.useEffect(()=>{
+    useEffect(()=>{
         setLoading(true)
 
         const getData = async ()=>{

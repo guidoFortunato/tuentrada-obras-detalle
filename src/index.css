@@ -58,7 +58,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 100%;
   overflow: visible;
-  background: #fff url("./img/obras1920.webp") no-repeat center center;
+  background: #fff url("./img/obras1334x750.webp") no-repeat center center;
 }
 
 .back-to-top {
@@ -119,21 +119,48 @@ hr:not([size]) {
     display: table;
     width: 100%;
     height: 100vh;
-    background: url('./img/obras1920.webp') center center;
+    background: url('./img/obras1334x750.webp') center center;
     background-size: cover;
   }
 
-  /* @media screen and (max-width: 760px) {
-    #hero {      
-      background-size: contain;
-      background-repeat: no-repeat;
+
+/* 
+  @media screen and (min-width: 768px) {
+    #hero {
+      background: url('./img/obras1920.webp') no-repeat center center;
+      background-size: cover;
+      display: table;
+      width: 100%;
+      height: 100vh;
       
     }
     #preloader {
-      background-size: contain;
-      background-repeat: no-repeat;
+      background: url("./img/obras1920.webp") no-repeat center center;
+      background-size: cover;
+      display: table;
+      width: 100%;
+      height: 100vh;
     }
   } */
+
+
+  @media screen and (min-width: 992px) {
+    #hero {
+      background: url('./img/obras1920.webp') no-repeat center center;
+      background-size: cover;
+      display: table;
+      width: 100%;
+      height: 100vh;
+      
+    }
+    #preloader {
+      background: url("./img/obras1920.webp") no-repeat center center;
+      background-size: cover;
+      display: table;
+      width: 100%;
+      height: 100vh;
+    }
+  }
   
   @media (min-width: 1024px) {
     #hero {
@@ -151,7 +178,7 @@ hr:not([size]) {
   }
   
   #hero .hero-container {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.74);
     display: table-cell;
     margin: 0;
     padding: 0;
@@ -232,7 +259,7 @@ hr:not([size]) {
   }
   
   #hero .btn-services:hover {
-    background: #a28200;
+    background: none;
     border: 2px solid #a28200;
   }
 
@@ -935,7 +962,7 @@ hr:not([size]) {
   }
   
   #team .btn-get-started {
-    background: #a28200;
+    background: none;
     padding-left: 15px;
     padding-right: 15px;
     border: 2px solid #a28200;
@@ -943,7 +970,7 @@ hr:not([size]) {
   }
   
   #team .btn-get-started:hover {
-    background: none;
+    background: #a28200;
     padding-left: 20px;
     padding-right: 20px;
     border: 2px solid #a28200;

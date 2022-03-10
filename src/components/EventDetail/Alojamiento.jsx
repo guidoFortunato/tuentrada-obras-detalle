@@ -2,7 +2,6 @@ import React from 'react'
 
 const Alojamiento = ({info}) => {
 
-  // console.log(info)
   
   const arrayDiasIn = []
   // const arrayDiasOut = []
@@ -17,17 +16,7 @@ const Alojamiento = ({info}) => {
   // arrayDiasOut.push(dia_primero, dia_segundo, dia_tercero_checkout)
  
   const fechaEvento = arrayDiasIn.join('-')
-  // console.log(fechaEvento)
-
-  // console.log(checkin)
-  // const checkout = arrayDiasOut.join('-')
-  // console.log(checkout) 
-
-  // // // const nuevoOut = new Date(checkout).toLocaleDateString().replaceAll('/', '-')
-  // // const nuevoDia = nuevoOut.getDate()
-  // console.log(nuevoDia)
-
-  // const fechaPrueba = '2022-03-31'
+ 
   const fecha = new Date(fechaEvento)
 
   const fechaDeMañana = ()=>{

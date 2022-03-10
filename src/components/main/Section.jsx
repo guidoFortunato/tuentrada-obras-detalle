@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-scroll'
+
 import { VariablesContext } from '../../context/VariablesProvider'
 
 const Section = () => {
@@ -10,13 +12,14 @@ const Section = () => {
                 <div className="hero-container">
                 <div className="wow fadeIn">
                     <div className="hero-logo">
-                    <img src={variables.logo} alt={variables.altLogo} />
+                    {/* <img src={variables.logo} alt={variables.altLogo} /> */}
                     </div>
-
-                    <h1>{variables.tituloInicio}</h1>
+                    <div>
+                        <h1>{variables.tituloInicio}</h1>
+                    </div>
                     
                     <div className="actions" align="center">
-                    <a href="#team" className="btn-get-started">{variables.botonInicio}</a>
+                        <Link to="team" className="btn btn-get-started">{variables.botonInicio}</Link>
                     </div>
                 
                 </div>

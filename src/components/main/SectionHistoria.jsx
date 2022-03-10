@@ -40,7 +40,7 @@ const SectionHistoria = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="section-title-divider mt-4"></div>
+                    {/* <div className="section-title-divider mt-4"></div> */}
                 </section>
             
         </>

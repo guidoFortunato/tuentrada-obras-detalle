@@ -20,6 +20,8 @@ const DetalleEvento = (props) => {
     const {variables} = React.useContext(VariablesContext)
     const {id} = useParams()
 
+    // console.log(eventos)
+
     
     useEffect(()=>{
         setLoading(true)
