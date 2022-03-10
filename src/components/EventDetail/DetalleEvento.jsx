@@ -199,29 +199,43 @@ const DetalleEvento = (props) => {
 
 
 
-                        <div className="fecha-hora size-datos mb-2">
-                            {/* <i className="bi bi-calendar2-check-fill color-icono me-2"></i> */}
+                        {
+                            eventos.venue &&
+                            <div className="fecha-hora size-datos mb-2">
                             <i className="bi bi-geo-alt-fill color-icono me-2"></i>
                             <span className='fecha-hora__color-texto'>Lugar: </span>
                             <span className='ms-1'>{eventos.venue}</span>
                         </div>
-                        <div className="fecha-hora size-datos mb-2">
-                            <i className="bi bi-geo-alt-fill color-icono me-2"></i>
-                            <span className='fecha-hora__color-texto'>Ciudad: </span>
-                            <span className='ms-1'>{eventos.city}</span>
-                        </div>
-                        <div className="fecha-hora size-datos mb-2">
-                            <i className="bi bi-calendar-check color-icono me-2"></i>
-                            <span className='fecha-hora__color-texto'>Fecha:</span>
-                            <span className='ms-1'>
-                                {eventos.date.split(' ')[0].split('-')[2]}-{eventos.date.split(' ')[0].split('-')[1]}-{eventos.date.split(' ')[0].split('-')[0]}
-                            </span>
-                        </div>
-                        <div className="fecha-hora size-datos mb-2">
-                            <i className="bi bi-clock-history color-icono me-2"></i>
-                            <span className='fecha-hora__color-texto'>Hora:</span>
-                            <span className='ms-1'>{eventos.hour}hs</span>
-                        </div>
+                        }
+
+                        {
+                            eventos.city && 
+                            <div className="fecha-hora size-datos mb-2">
+                                <i className="bi bi-geo-alt-fill color-icono me-2"></i>
+                                <span className='fecha-hora__color-texto'>Ciudad: </span>
+                                <span className='ms-1'>{eventos.city}</span>
+                            </div>
+                        }
+
+                        {
+                            eventos.date && 
+                            <div className="fecha-hora size-datos mb-2">
+                                <i className="bi bi-calendar-check color-icono me-2"></i>
+                                <span className='fecha-hora__color-texto'>Fecha:</span>
+                                <span className='ms-1'>
+                                    {eventos.date.split(' ')[0].split('-')[2]}-{eventos.date.split(' ')[0].split('-')[1]}-{eventos.date.split(' ')[0].split('-')[0]}
+                                </span>
+                            </div>
+                        }
+
+                        {
+                            eventos.hour && 
+                            <div className="fecha-hora size-datos mb-2">
+                                <i className="bi bi-clock-history color-icono me-2"></i>
+                                <span className='fecha-hora__color-texto'>Hora:</span>
+                                <span className='ms-1'>{eventos.hour}hs</span>
+                            </div>
+                        }                       
 
                         {
                             eventos.subcategory ? 
@@ -232,21 +246,31 @@ const DetalleEvento = (props) => {
                             </div> : null
                         }
 
-                        
-
-
-                        <div className="fecha-hora size-datos mb-2">
-                            <i className="bi bi-geo-alt-fill color-icono me-2"></i>
-                            <span className='fecha-hora__color-texto'>Dirección:</span>
-                            <span className='ms-1'>{eventos.address}</span>
-                        </div>
                         {
-                            eventos.openDoors ? 
-                            <div className="fecha-hora size-datos mb-4">
+                            eventos.address && 
+                            <div className="fecha-hora size-datos mb-2">
+                                <i className="bi bi-geo-alt-fill color-icono me-2"></i>
+                                <span className='fecha-hora__color-texto'>Dirección:</span>
+                                <span className='ms-1'>{eventos.address}</span>
+                            </div>
+                        }
+
+                        {
+                            eventos.doorOpening ? 
+                            <div className="fecha-hora size-datos mb-2">
                                 <i className="bi bi-door-open color-icono me-2"></i>
                                 <span className='fecha-hora__color-texto'>Apertura puertas:</span>
-                                <span className='ms-1'></span>
+                                <span className='ms-1'>{eventos.doorOpening}hs</span>
                             </div> : null
+                        }
+
+                        {
+                            eventos.minimumAge ? 
+                            <div className="fecha-hora size-datos mb-4">
+                                <i className="bi bi-exclamation-circle color-icono me-2"></i>
+                                <span className='fecha-hora__color-texto'>Edad mínima de ingreso:</span>
+                                <span className='ms-1'>{eventos.minimumAge} años</span>
+                            </div> : null 
                         }
                         
                         
