@@ -7,6 +7,8 @@ const Tabla = ({info}) => {
     // let datos = []
     const [loading, setLoading] = useState(true);
     const [datos, setDatos] = useState([]);
+
+    // const datos = []
         
 
    

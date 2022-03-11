@@ -82,7 +82,7 @@ const DetalleEvento = (props) => {
     }, [id])
 
 
-    console.log(eventos)
+   
 
     //  Dia
     //  const fecha = eventos.date.split(' ')[0]
@@ -127,7 +127,7 @@ const DetalleEvento = (props) => {
 
         
             <div className="container">
-                <h1 className='titulo-evento-detalle'>{eventos.name}</h1> 
+                <h2 className='titulo-evento-detalle'>{eventos.name}</h2> 
                 <hr />
                 <div className="row mb-5">
                     <div className="col-12 col-lg-6 mb-5 mb-lg-0">
