@@ -127,7 +127,7 @@ const DetalleEvento = (props) => {
 
         
             <div className="container">
-                <h2 className='titulo-evento-detalle'>{eventos.name}</h2> 
+                <h1 className='h1 fw-bold titulo-evento-detalle'>{eventos.name}</h1> 
                 <hr />
                 <div className="row mb-5">
                     <div className="col-12 col-lg-6 mb-5 mb-lg-0">

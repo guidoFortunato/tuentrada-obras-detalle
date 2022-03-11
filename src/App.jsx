@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import {
     BrowserRouter as Router,
     
-    HashRouter,
+    
     
     Route,
     Switch
@@ -12,7 +12,7 @@ import {
 
 import VariablesProvider from './context/VariablesProvider';
 import TagManager from 'react-gtm-module';
-import Error404 from './components/auth/Error404';
+// import Error404 from './components/auth/Error404';
 // import BotonFlotante from './components/main/BotonFlotante';
 import Home from './components/home/Home';
 import DetalleEvento from './components/EventDetail/DetalleEvento';
@@ -36,14 +36,14 @@ function App() {
     <>
     <VariablesProvider>
 
-      <HashRouter>
+      <Router basename='/estadio/obras'>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/:id" component={DetalleEvento} />
           <Route path="*" component={Home} />        
         </Switch>
 
-      </HashRouter>
+      </Router>
     </VariablesProvider>
     </>
 
