@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import {BrowserRouter as Router} from "react-router-dom";
 import { Link } from "react-scroll";
 import { VariablesContext } from '../../context/VariablesProvider'
@@ -17,7 +17,14 @@ const Navbar = () => {
         }
     }
 
-    window.addEventListener('scroll', changeBackground)
+    
+    useEffect(() => {
+        window.addEventListener('scroll', changeBackground)
+        
+        return () => {
+            window.removeEventListener('scroll', changeBackground)
+        };
+    }, []);
     
   
     return (
@@ -29,9 +36,9 @@ const Navbar = () => {
             <nav data-toggle="collapse" className={navbar ? "navbar navbar-expand-lg navbar-dark navbar-active fixed-top" : "navbar navbar-expand-lg navbar-dark fixed-top"}>
                 <div className="container">
 
-                        <a href="https://www.tuentrada.com/" target='_blank' rel='noreferrer'>
-                            <img src={variables.logoTuentrada} style={{width: 'auto', height: 'auto'}} alt={variables.altLogoTuen} />
-                        </a>
+                    <Link to='/'>
+                        <img className='cursor' src={variables.logo} style={{width: '174px', height: '56px'}} alt={variables.altLogo} />
+                    </Link>
                     
                         {/* <img src={variables.logo} style={{width: '125px', height: '40px'}} alt={variables.altLogo} /> */}
                     

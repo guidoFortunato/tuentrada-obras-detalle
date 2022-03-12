@@ -178,7 +178,7 @@ hr:not([size]) {
   }
   
   #hero .hero-container {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.85);
     display: table-cell;
     margin: 0;
     padding: 0;
@@ -309,14 +309,31 @@ hr:not([size]) {
     background: rgba(0, 0, 0, 0.80);
   }
 
-  @media (max-width: 497px) {
+  /*navbar detalle*/
+
+  .separacion{
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .nav-direction{
+    flex-direction: column;
+    justify-content: center;
+  }
+  .separacion-logo{
+    margin-bottom: 20px;
+  }   
+
+  @media (min-width: 476px) {
+    .separacion{
+      margin-right: 48px;
+      margin-bottom: 0;
+    }
     .nav-direction{
-      flex-direction: column;
+      flex-direction: row;
     }
     .separacion-logo{
-      margin-bottom: 20px;
+      margin-bottom: 0;
     }
-    
   }
 
 

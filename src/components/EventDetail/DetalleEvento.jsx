@@ -29,29 +29,28 @@ const DetalleEvento = (props) => {
         const getData = async ()=>{
             const url = `https://testapi.tuentrada.com/api/event?event=${id}`
             const token = '3|ruU31fAttxU0FKWmvV8pdB1GCyhQa7lNAQwBfEVb'
-            // const info = {
-            //     event: id
-            // }
+            const body = new FormData()
+            body.append('event',  id)
             // const formData = new FormData()
             // formData.append('event', `${id}`)
-            // console.log(formData.get('event'))
+           
 
             try {
                 const res = await fetch(url, {
 
-                    method: 'GET',
+                    method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${token}`,
                         
-                    },
-                    // body: JSON.stringify(info)
-                    // body: formData
+                    },                   
+                    body
         
                 })
-                // console.log(res)
+                
 
                 const data = await res.json()
+                // console.log(data)
 
                               
                 setEventos(data)
@@ -107,20 +106,27 @@ const DetalleEvento = (props) => {
         
             <nav  className="navbar navbar-expand-lg navbar-dark navbar-active sticky-top mb-5">
                 <div className="container nav-direction">
-                    <Link to='/'>
-                        <img className='cursor separacion-logo' src={variables.logo} style={{width: '277px', height: '89px'}} alt={variables.altLogo} />
-                    </Link>
-                    <a href="https://www.tuentrada.com/" target='_blank' rel='noreferrer'>
+                    <div className="logo">
+                        <Link to='/'>
+                            <img className='cursor separacion-logo' src={variables.logo} style={{width: '174px', height: '56px'}} alt={variables.altLogo} />
+                        </Link>                    
+                    </div>
+                    {/* <a href="https://www.tuentrada.com/" target='_blank' rel='noreferrer'>
                             <img src={variables.logoTuentrada} style={{width: 'auto', height: 'auto'}} alt={variables.altLogoTuen} />
-                    </a>
+                    </a> */}
                     
+                    <div className='logo'>
+                        
+                            <Link 
+                                    className="btn btn-dark separacion"
+                                    to='/'
+                                >
+                                    {variables.volver}
+                            </Link>
+                            
+                    </div>
+                   
                     
-                    {/* <button 
-                        className="btn btn-dark ms-auto"
-                        onClick={()=>props.history.push('/')}
-                    >
-                        {variables.volver}
-                    </button> */}
                     
                 </div>
             </nav>
