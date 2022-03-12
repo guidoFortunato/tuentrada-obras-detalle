@@ -99,7 +99,7 @@ const Eventos = (props) => {
                             
                             { eventos.length > 0 ? eventos.map( item => (
                                 
-                                <div className="col-12 col-sm-6 col-lg-4 col-xl-3 text-center mt-2 mb-2" key={item.id}>
+                                <article className="col-12 col-sm-6 col-lg-4 col-xl-3 text-center mt-2 mb-2" key={item.id}>
                                     
                                     <ListaEventos 
                                         id={item.id} 
@@ -109,7 +109,7 @@ const Eventos = (props) => {
                                         time={item.time} 
                                         buy={item.link_to_buy}
                                     />
-                                </div>
+                                </article>
                                 )) : <MessageError error={error}/>
                            
                             }
