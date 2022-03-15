@@ -1,5 +1,10 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {
+	BrowserRouter as Router,
+	HashRouter,
+	Route,
+	Switch,
+} from 'react-router-dom';
 
 import VariablesProvider from './context/VariablesProvider';
 import TagManager from 'react-gtm-module';
@@ -23,14 +28,14 @@ function App() {
 	return (
 		<>
 			<VariablesProvider>
-				<Router basename='/estadio/obras'>
+				<HashRouter basename='/estadio/obras'>
 					<Switch>
 						<Route exact path='/' component={Home} />
 						<Route exact path='/error' component={Error404} />
 						<Route exact path='/:id' component={DetalleEvento} />
 						<Route path='*' component={Error404} />
 					</Switch>
-				</Router>
+				</HashRouter>
 			</VariablesProvider>
 		</>
 	);
