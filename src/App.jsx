@@ -28,14 +28,14 @@ function App() {
 	return (
 		<>
 			<VariablesProvider>
-				<HashRouter basename='/estadio/obras'>
+				<Router basename='/estadio/obras'>
 					<Switch>
 						<Route exact path='/' component={Home} />
 						<Route exact path='/error' component={Error404} />
 						<Route exact path='/:id' component={DetalleEvento} />
 						<Route path='*' component={Error404} />
 					</Switch>
-				</HashRouter>
+				</Router>
 			</VariablesProvider>
 		</>
 	);
