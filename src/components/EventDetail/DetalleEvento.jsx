@@ -1,7 +1,7 @@
 /* eslint-disable no-throw-literal */
 import React, { useEffect, useState } from 'react';
 import { withRouter, Redirect } from 'react-router';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useHistory } from 'react-router-dom';
 // import rapsodia from '../../img/rapsodia.jpg'
 import { VariablesContext } from '../../context/VariablesProvider';
 import Loader from '../main/Loader/Loader';
@@ -10,6 +10,7 @@ import Tabla from './Tabla';
 import Alojamiento from './Alojamiento';
 import DOMPurify from 'dompurify';
 import LinksRedes from './LinksRedes';
+import Error404 from '../auth/Error404';
 
 const DetalleEvento = props => {
 	const [eventos, setEventos] = useState(null);
@@ -17,11 +18,12 @@ const DetalleEvento = props => {
 	const [error, setError] = useState(null);
 	const { variables } = React.useContext(VariablesContext);
 	const { id } = useParams();
+    const history = useHistory()
 
 	// console.log(eventos)
 
 	useEffect(() => {
-		setLoading(true);
+		
 
 		const getData = async () => {
 			const url = `https://api.tuentrada.com/api/event?event=${id}`;
@@ -43,7 +45,7 @@ const DetalleEvento = props => {
 				const data = await res.json();
 				// console.log(data)
 
-				setEventos(data);
+				
 
 				// eslint-disable-next-line no-throw-literal
 				if (!res.ok) {
@@ -55,15 +57,17 @@ const DetalleEvento = props => {
 					};
 				}
 
+                setEventos(data);
+                setLoading(false);
+
 				// console.log(data)
 			} catch (err) {
 				console.log('error', err);
-				if (err) {
-					setError(err);
-				}
+				setError(err);
+                history.push('/error')
 			}
 
-			setLoading(false);
+			
 		};
 
 		getData();

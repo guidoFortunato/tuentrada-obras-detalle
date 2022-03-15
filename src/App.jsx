@@ -26,9 +26,9 @@ function App() {
 				<Router basename='/estadio/obras'>
 					<Switch>
 						<Route exact path='/' component={Home} />
+						<Route exact path='/error' component={Error404} />
 						<Route exact path='/:id' component={DetalleEvento} />
-            {/* <TestId path='/:id' component={DetalleEvento} /> */}
-						<Route path='*' component={Home} />
+						<Route path='*' component={Error404} />
 					</Switch>
 				</Router>
 			</VariablesProvider>
