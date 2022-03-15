@@ -2,15 +2,12 @@
 import React, { useEffect, useState } from 'react';
 import { withRouter, Redirect } from 'react-router';
 import { Link, useParams, useHistory } from 'react-router-dom';
-// import rapsodia from '../../img/rapsodia.jpg'
 import { VariablesContext } from '../../context/VariablesProvider';
 import Loader from '../main/Loader/Loader';
-// import MessageError from '../error/MessageError';
 import Tabla from './Tabla';
 import Alojamiento from './Alojamiento';
 import DOMPurify from 'dompurify';
 import LinksRedes from './LinksRedes';
-import Error404 from '../auth/Error404';
 
 const DetalleEvento = props => {
 	const [eventos, setEventos] = useState(null);
@@ -18,16 +15,14 @@ const DetalleEvento = props => {
 	const [error, setError] = useState(null);
 	const { variables } = React.useContext(VariablesContext);
 	const { id } = useParams();
-    const history = useHistory()
+	const history = useHistory();
 
 	// console.log(eventos)
 
 	useEffect(() => {
-		
-
 		const getData = async () => {
 			const url = `https://api.tuentrada.com/api/event?event=${id}`;
-			const token = '3|ruU31fAttxU0FKWmvV8pdB1GCyhQa7lNAQwBfEVb';
+			const token = process.env.REACT_APP_TOKEN_OBRAS;
 			// const body = new FormData();
 			// body.append('event', id);
 			// const body = {
@@ -45,8 +40,6 @@ const DetalleEvento = props => {
 				const data = await res.json();
 				// console.log(data)
 
-				
-
 				// eslint-disable-next-line no-throw-literal
 				if (!res.ok) {
 					throw {
@@ -57,17 +50,15 @@ const DetalleEvento = props => {
 					};
 				}
 
-                setEventos(data);
-                setLoading(false);
+				setEventos(data);
+				setLoading(false);
 
 				// console.log(data)
 			} catch (err) {
 				console.log('error', err);
 				setError(err);
-                history.push('/error')
+				history.push('/error');
 			}
-
-			
 		};
 
 		getData();
