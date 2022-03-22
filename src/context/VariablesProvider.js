@@ -64,12 +64,13 @@ const VariablesProvider = (props) => {
     }
 
     const [variables, setVariables] = React.useState(variablesGlobales)
+    const [idEvent, setIdEvent] = React.useState('')
 
 
 
 
     return (
-        <VariablesContext.Provider value={{variables, setVariables}}>
+        <VariablesContext.Provider value={{variables, setVariables, idEvent, setIdEvent}}>
             {props.children}
         </VariablesContext.Provider>
     )

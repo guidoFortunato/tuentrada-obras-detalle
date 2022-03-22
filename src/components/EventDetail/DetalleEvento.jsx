@@ -1,6 +1,6 @@
 /* eslint-disable no-throw-literal */
 import React, { useEffect, useState } from 'react';
-import { withRouter, Redirect } from 'react-router';
+import { withRouter } from 'react-router';
 import { Link, useParams, useHistory } from 'react-router-dom';
 import { VariablesContext } from '../../context/VariablesProvider';
 import Loader from '../main/Loader/Loader';
@@ -13,9 +13,13 @@ const DetalleEvento = props => {
 	const [eventos, setEventos] = useState(null);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
-	const { variables } = React.useContext(VariablesContext);
+	const { variables, idEvent } = React.useContext(VariablesContext);
 	const { id } = useParams();
 	const history = useHistory();
+
+	// console.log(useParams())
+	// console.log(idEvent)
+	// console.log(idEvent)
 
 	// console.log(eventos)
 
@@ -51,18 +55,21 @@ const DetalleEvento = props => {
 				}
 
 				setEventos(data);
-				setLoading(false);
+				
 
 				// console.log(data)
 			} catch (err) {
 				console.log('error', err);
 				setError(err);
-				history.push('/error');
+				history.push('/obras/error');
+			}
+			finally{
+				setLoading(false);
 			}
 		};
 
 		getData();
-	}, [id]);
+	}, [idEvent]);
 
 	//  Dia
 	//  const fecha = eventos.date.split(' ')[0]

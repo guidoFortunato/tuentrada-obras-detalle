@@ -12,7 +12,7 @@ import Error404 from './components/auth/Error404';
 // import BotonFlotante from './components/main/BotonFlotante';
 import Home from './components/home/Home';
 import DetalleEvento from './components/EventDetail/DetalleEvento';
-import TestId from './components/EventDetail/TestId';
+// import TestId from './components/EventDetail/TestId';
 
 const TagManagerArgs = {
 	gtmId: 'GTM-N2N9W5J',
@@ -32,8 +32,8 @@ function App() {
 					<Switch>
 						<Route exact path='/' component={Home} />
 						<Route exact path='/error' component={Error404} />
-						<Route exact path='/:id' component={DetalleEvento} />
-						<Route path='*' component={Error404} />
+						<Route exact path='/:title/:id' component={DetalleEvento} />
+						{/* <Route path='*' component={Error404} /> */}
 					</Switch>
 				</Router>
 			</VariablesProvider>

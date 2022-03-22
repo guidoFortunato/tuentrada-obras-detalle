@@ -1,12 +1,26 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useHistory } from 'react-router-dom'
+import { VariablesContext } from '../../../context/VariablesProvider';
 import './listaEventos.css'
 
 const ListaEventos = ({id, title, image, date, time, buy}) => {
 
+    const { setIdEvent } = React.useContext(VariablesContext);
+    const [dataEventos, setDataEventos] = useState([]);
+    const history = useHistory();
+
+    // console.log(id)
+
+    // console.log(id)
+
+    // useEffect(() => {
+    //     setIdEvent(id)
+    // }, []);
+
+    const newTitle = title.split(' ').join('-').toLowerCase()
     
 
-    //Dia
+    // Dia
     const fechaCambioFormato = 20 + date.split('-')[2]+ '-' + date.split('-')[1] + '-' + date.split('-')[0]
     
     const daysNames = ['LUN','MAR','MIER','JUE','VIER','SAB','DOM'];
@@ -17,6 +31,43 @@ const ListaEventos = ({id, title, image, date, time, buy}) => {
     // Mes
     const monthNames = ["ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC"];
     const numeroMes = Number(date.split('-')[1] - 1)
+
+    // const idEvento = (id)=>{
+
+    //     setIdEvent(id)
+      
+    //     const getData = async () => {
+    //             const url = `https://api.tuentrada.com/api/event?event=${id}`;
+    //             const token = process.env.REACT_APP_TOKEN_OBRAS;
+                
+    //             try {
+    //                 const res = await fetch(url, {
+    //                     method: 'GET',
+    //                     headers: {
+    //                         'Content-Type': 'application/json',
+    //                         Authorization: `Bearer ${token}`,
+    //                     },
+    //                 });
+    
+    //                 const data = await res.json();
+    //                 console.log(data.length)
+
+
+                    
+
+
+                    
+    //             } catch (err) {
+    //                 console.log('error', err);
+    //                 // setError(err);
+    //                 history.push('/error');
+    //             }
+    //         };
+    //         getData()
+ 
+    
+       
+    // }
     
 
     return (
@@ -71,9 +122,9 @@ const ListaEventos = ({id, title, image, date, time, buy}) => {
                                         </a> */}
                                         <Link
                                             className="btn btn-primary btn-color mt-4 animacion-boton"
-                                            to={`/${id}`}
-                                            
-                                            >
+                                            to={`/${newTitle}/${id}`}       
+                                            // onClick={()=>idEvento(id)}                                  
+                                        >
                                             Comprar
                                         </Link>
 
