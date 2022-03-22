@@ -61,7 +61,7 @@ const DetalleEvento = props => {
 			} catch (err) {
 				console.log('error', err);
 				setError(err);
-				history.push('/obras/error');
+				history.push('/error');
 			}
 			finally{
 				setLoading(false);
