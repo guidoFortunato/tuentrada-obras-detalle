@@ -16,7 +16,7 @@ const ListaEventos = ({id, title, image, date, time, buy}) => {
     // useEffect(() => {
     //     setIdEvent(id)
     // }, []);
-
+    console.log(title)
     const newTitle = title.split(' ').join('-').toLowerCase()
     
 
@@ -125,6 +125,7 @@ const ListaEventos = ({id, title, image, date, time, buy}) => {
                                             to={`/${newTitle}/${id}`}       
                                             // onClick={()=>idEvento(id)}                                  
                                         >
+                                            
                                             Comprar
                                         </Link>
 
