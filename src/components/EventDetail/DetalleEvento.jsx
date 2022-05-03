@@ -23,6 +23,14 @@ const DetalleEvento = props => {
 
 	// console.log(eventos)
 
+	const getFormattedTime = (h,m)=>{
+		const hours = h === 0 ? 12 : h > 12 ? h - 12 : null
+		const minutes = m
+		const ampm = h < 12 ? 'AM' : 'PM'
+		const formattedTime = `${hours}:${minutes}${ampm}`
+		return formattedTime
+	}
+
 	useEffect(() => {
 		const getData = async () => {
 			const url = `https://api.tuentrada.com/api/event?event=${id}`;
@@ -172,7 +180,7 @@ const DetalleEvento = props => {
 
 							<div>
 								<span className='fw-bold card-detalle__tamaño-letra'>
-									{eventos.hour}hs
+									{getFormattedTime(eventos.hour.split(':')[0],eventos.hour.split(':')[1])}
 								</span>
 							</div>
 						</div>
@@ -213,7 +221,8 @@ const DetalleEvento = props => {
 							<div className='fecha-hora size-datos mb-2'>
 								<i className='bi bi-clock-history color-icono me-2'></i>
 								<span className='fecha-hora__color-texto'>Hora:</span>
-								<span className='ms-1'>{eventos.hour}hs</span>
+								{console.log(eventos.hour.split(':')[0])}
+								<span className='ms-1'>{getFormattedTime(eventos.hour.split(':')[0],eventos.hour.split(':')[1])}</span>
 							</div>
 						)}
 
@@ -239,7 +248,7 @@ const DetalleEvento = props => {
 								<span className='fecha-hora__color-texto'>
 									Apertura puertas:
 								</span>
-								<span className='ms-1'>{eventos.doorOpening}hs</span>
+								<span className='ms-1'>{eventos.doorOpening}</span>
 							</div>
 						) : null}
 
