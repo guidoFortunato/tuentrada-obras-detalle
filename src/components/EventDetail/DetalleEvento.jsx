@@ -221,7 +221,6 @@ const DetalleEvento = props => {
 							<div className='fecha-hora size-datos mb-2'>
 								<i className='bi bi-clock-history color-icono me-2'></i>
 								<span className='fecha-hora__color-texto'>Hora:</span>
-								{console.log(eventos.hour.split(':')[0])}
 								<span className='ms-1'>{getFormattedTime(eventos.hour.split(':')[0],eventos.hour.split(':')[1])}</span>
 							</div>
 						)}

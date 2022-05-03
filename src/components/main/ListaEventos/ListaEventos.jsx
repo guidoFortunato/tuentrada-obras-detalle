@@ -9,14 +9,7 @@ const ListaEventos = ({id, title, image, date, time, buy}) => {
     const [dataEventos, setDataEventos] = useState([]);
     const history = useHistory();
 
-    // console.log(id)
-
-    // console.log(id)
-
-    // useEffect(() => {
-    //     setIdEvent(id)
-    // }, []);
-    console.log(title)
+    
     const newTitle = title.split(' ').join('-').toLowerCase()
     
 
