@@ -17,29 +17,19 @@ const DetalleEvento = props => {
 	const { id } = useParams();
 	const history = useHistory();
 
-	// console.log(useParams())
-	// console.log(idEvent)
-	// console.log(idEvent)
-
-	// console.log(eventos)
-
-	const getFormattedTime = (h,m)=>{
-		const hours = h === 0 ? 12 : h > 12 ? h - 12 : null
-		const minutes = m
-		const ampm = h < 12 ? 'AM' : 'PM'
-		const formattedTime = `${hours}:${minutes}${ampm}`
-		return formattedTime
-	}
+	const getFormattedTime = (h, m) => {
+		const hours = h === 0 ? 12 : h > 12 ? h - 12 : null;
+		const minutes = m;
+		const ampm = h < 12 ? 'AM' : 'PM';
+		const formattedTime = `${hours}:${minutes}${ampm}`;
+		return formattedTime;
+	};
 
 	useEffect(() => {
 		const getData = async () => {
 			const url = `https://api.tuentrada.com/api/event?event=${id}`;
 			const token = process.env.REACT_APP_TOKEN_OBRAS;
-			// const body = new FormData();
-			// body.append('event', id);
-			// const body = {
-			// 	"event": `${id}`,
-			// };
+
 			try {
 				const res = await fetch(url, {
 					method: 'GET',
@@ -50,7 +40,6 @@ const DetalleEvento = props => {
 				});
 
 				const data = await res.json();
-				// console.log(data)
 
 				// eslint-disable-next-line no-throw-literal
 				if (!res.ok) {
@@ -63,15 +52,13 @@ const DetalleEvento = props => {
 				}
 
 				setEventos(data);
-				
 
-				// console.log(data)
+				console.log(eventos)
 			} catch (err) {
 				console.log('error', err);
 				setError(err);
 				history.push('/error');
-			}
-			finally{
+			} finally {
 				setLoading(false);
 			}
 		};
@@ -79,9 +66,6 @@ const DetalleEvento = props => {
 		getData();
 	}, [idEvent]);
 
-	//  Dia
-	//  const fecha = eventos.date.split(' ')[0]
-	//  console.log('fecha' + fecha)
 	const daysNames = [
 		'LUNES',
 		'MARTES',
@@ -91,7 +75,6 @@ const DetalleEvento = props => {
 		'SABADO',
 		'DOMINGO',
 	];
-	//  const numeroDia = new Date(fechaCambioFormato).getDay()
 
 	//  Mes
 	const monthNames = [
@@ -126,9 +109,6 @@ const DetalleEvento = props => {
 							/>
 						</Link>
 					</div>
-					{/* <a href="https://www.tuentrada.com/" target='_blank' rel='noreferrer'>
-                            <img src={variables.logoTuentrada} style={{width: 'auto', height: 'auto'}} alt={variables.altLogoTuen} />
-                    </a> */}
 
 					<div className='logo'>
 						<Link className='btn btn-dark separacion' to='/'>
@@ -151,39 +131,39 @@ const DetalleEvento = props => {
 					</div>
 
 					<div className='col-12 col-lg-6 espacio'>
-						<div className='card-detalle px-1 py-2 mb-5'>
-							{/* <span className='fw-bold'>SAB</span> */}
-							{/* <span className='fw-bold'>{daysNames[numeroDia]}</span> */}
-							<div>
-								<span className='fw-bold card-detalle__tamaño-letra'>
-									{daysNames[new Date(eventos.date.split(' ')[0]).getDay()]}
-								</span>
-							</div>
+						{eventos.date && eventos.date.split('-')[0] !== '2040' && (
+							<div className='card-detalle px-1 py-2 mb-5'>
+								<div>
+									<span className='fw-bold card-detalle__tamaño-letra'>
+										{daysNames[new Date(eventos.date.split(' ')[0]).getDay()]}
+									</span>
+								</div>
 
-							{/* {console.log(date.split('-')[0]) } */}
-							{/* <span className='fecha-tuen'>{date.split('-')[0]}</span> */}
-							<div>
-								<span className='fw-bold card-detalle__tamaño-numero'>
-									{eventos.date.split('-')[2].split(' ')[0]}
-								</span>
-							</div>
+								<div>
+									<span className='fw-bold card-detalle__tamaño-numero'>
+										{eventos.date.split('-')[2].split(' ')[0]}
+									</span>
+								</div>
 
-							{/* <span className='fw-bold'> {monthNames[numeroMes]} 20{date.split('-')[2]}</span> */}
-							<div>
-								<span className='fw-bold card-detalle__tamaño-letra'>
-									{monthNames[Number(eventos.date.split('-')[1] - 1)]}{' '}
-									{eventos.date.split('-')[0]}
-								</span>
-							</div>
+								<div>
+									<span className='fw-bold card-detalle__tamaño-letra'>
+										{monthNames[Number(eventos.date.split('-')[1] - 1)]}{' '}
+										{eventos.date.split('-')[0]}
+									</span>
+								</div>
 
-							<hr className='hr-card-detalle' />
+								<hr className='hr-card-detalle' />
 
-							<div>
-								<span className='fw-bold card-detalle__tamaño-letra'>
-									{getFormattedTime(eventos.hour.split(':')[0],eventos.hour.split(':')[1])}
-								</span>
+								<div>
+									<span className='fw-bold card-detalle__tamaño-letra'>
+										{getFormattedTime(
+											eventos.hour.split(':')[0],
+											eventos.hour.split(':')[1]
+										)}
+									</span>
+								</div>
 							</div>
-						</div>
+						)}
 
 						<div>
 							<h3>Información general</h3>
@@ -205,7 +185,7 @@ const DetalleEvento = props => {
 							</div>
 						)}
 
-						{eventos.date && (
+						{eventos.date && eventos.date.split('-')[0] !== '2040' && (
 							<div className='fecha-hora size-datos mb-2'>
 								<i className='bi bi-calendar-check color-icono me-2'></i>
 								<span className='fecha-hora__color-texto'>Fecha:</span>
@@ -221,7 +201,12 @@ const DetalleEvento = props => {
 							<div className='fecha-hora size-datos mb-2'>
 								<i className='bi bi-clock-history color-icono me-2'></i>
 								<span className='fecha-hora__color-texto'>Hora:</span>
-								<span className='ms-1'>{getFormattedTime(eventos.hour.split(':')[0],eventos.hour.split(':')[1])}</span>
+								<span className='ms-1'>
+									{getFormattedTime(
+										eventos.hour.split(':')[0],
+										eventos.hour.split(':')[1]
+									)}
+								</span>
 							</div>
 						)}
 
