@@ -12,7 +12,7 @@ import Error404 from './components/auth/Error404';
 // import BotonFlotante from './components/main/BotonFlotante';
 import Home from './components/home/Home';
 import DetalleEvento from './components/EventDetail/DetalleEvento';
-import TestId from './components/EventDetail/TestId';
+// import TestId from './components/EventDetail/TestId';
 // import TestId from './components/EventDetail/TestId';
 
 const TagManagerArgs = {
