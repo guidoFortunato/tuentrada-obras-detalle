@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import portfolio1 from '../img/portfolio1.webp'
 import portfolio2 from '../img/portfolio2.webp'
 import portfolio4 from '../img/portfolio4.webp'
@@ -63,14 +63,19 @@ const VariablesProvider = (props) => {
         
     }
 
-    const [variables, setVariables] = React.useState(variablesGlobales)
-    const [idEvent, setIdEvent] = React.useState('')
+    const [variables, setVariables] = useState(variablesGlobales)
+    const [idEvent, setIdEvent] = useState('')
+    const [listaEventos, setListaEventos] = useState([]);
+
+    const llenarEventos = (array)=>{
+        setListaEventos(array)
+    }
 
 
 
 
     return (
-        <VariablesContext.Provider value={{variables, setVariables, idEvent, setIdEvent}}>
+        <VariablesContext.Provider value={{variables, setVariables, idEvent, setIdEvent, llenarEventos, listaEventos}}>
             {props.children}
         </VariablesContext.Provider>
     )

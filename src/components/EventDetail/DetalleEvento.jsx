@@ -1,6 +1,6 @@
 /* eslint-disable no-throw-literal */
 import React, { useEffect, useState } from 'react';
-import { withRouter } from 'react-router';
+import { withRouter, Redirect } from 'react-router';
 import { Link, useParams, useHistory } from 'react-router-dom';
 import { VariablesContext } from '../../context/VariablesProvider';
 import Loader from '../main/Loader/Loader';
@@ -8,12 +8,29 @@ import Tabla from './Tabla';
 import Alojamiento from './Alojamiento';
 import DOMPurify from 'dompurify';
 import LinksRedes from './LinksRedes';
+import { getEventos } from '../../helpers/getEventos';
+
+	//  Mes
+	const monthNames = [
+		'ENE',
+		'FEB',
+		'MAR',
+		'ABR',
+		'MAY',
+		'JUN',
+		'JUL',
+		'AGO',
+		'SEP',
+		'OCT',
+		'NOV',
+		'DIC',
+	];
 
 const DetalleEvento = props => {
 	const [eventos, setEventos] = useState(null);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
-	const { variables, idEvent } = React.useContext(VariablesContext);
+	const { variables, idEvent, listaEventos } = React.useContext(VariablesContext);
 	const { id } = useParams();
 	const history = useHistory();
 
@@ -53,7 +70,7 @@ const DetalleEvento = props => {
 
 				setEventos(data);
 
-				console.log(eventos)
+				
 			} catch (err) {
 				console.log('error', err);
 				setError(err);
@@ -76,23 +93,13 @@ const DetalleEvento = props => {
 		'DOMINGO',
 	];
 
-	//  Mes
-	const monthNames = [
-		'ENE',
-		'FEB',
-		'MAR',
-		'ABR',
-		'MAY',
-		'JUN',
-		'JUL',
-		'AGO',
-		'SEP',
-		'OCT',
-		'NOV',
-		'DIC',
-	];
-	//  const numeroMes = Number(date.split('-')[1] - 1)
+	// const getEvento = getEventos(listaEventos, id)
 
+	// if (!getEvento) {
+	// 	return <Redirect to='/'/> 
+	// }
+
+	
 	return loading ? (
 		<Loader />
 	) : (

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { VariablesContext } from '../../context/VariablesProvider';
 import MessageError from '../error/MessageError';
 import ListaEventos from './ListaEventos/ListaEventos';
@@ -8,7 +8,7 @@ const Eventos = props => {
 	const [eventos, setEventos] = useState([]);
 	const [error, setError] = useState(null);
 	const [loading, setLoading] = useState(true);
-	const { variables, idEvent, setIdEvent } = React.useContext(VariablesContext);
+	const { variables, llenarEventos} = useContext(VariablesContext);
 
 	const url = process.env.REACT_APP_API_OBRAS;
 	const token = process.env.REACT_APP_TOKEN_OBRAS;
@@ -36,6 +36,7 @@ const Eventos = props => {
 					};
 
 				const data = await res.json();
+				console.log(data)
 
 				/*
                 no funciona el manejo de error
@@ -48,6 +49,7 @@ const Eventos = props => {
                 */
 
 				setEventos(data);
+				llenarEventos(data)
 			} catch (err) {
 				console.log('error', err);
 				if (err) {
@@ -60,6 +62,8 @@ const Eventos = props => {
 
 		getData();
 	}, [token, url]);
+
+	
 
 	return loading ? (
 		<Loader />
