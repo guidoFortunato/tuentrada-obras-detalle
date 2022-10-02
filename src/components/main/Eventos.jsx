@@ -84,7 +84,7 @@ const Eventos = props => {
 						{eventos.length > 0 ? (
 							eventos.map(item => (
 								<article
-								className='col-12 col-sm-6 col-lg-4 col-xl-3 text-center mt-2 mb-2'
+								className='col-12 col-sm-6 col-lg-4 col-xl-3 text-center mt-2 mb-2 size-container'
 								key={item.id}
 								>
 									

@@ -32,7 +32,7 @@ const ListaEventos = ({id, title, image, date, time, buy}) => {
     return (
         <>                                       
                     
-                        <div className="card dark-color-cards dark-scale">
+                        <div className="card dark-color-cards dark-scale h-100">
                             
                             <img src={`https://tuentrada.com/${image}`} className="card-img-top" alt={title} />
                             <div className="card-body">                                                
