@@ -29,7 +29,7 @@ import { getEventos } from '../../helpers/getEventos';
 const DetalleEvento = props => {
 	const [eventos, setEventos] = useState(null);
 	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState(null);
+	// const [error, setError] = useState(null);
 	const { variables, idEvent, listaEventos } = React.useContext(VariablesContext);
 	const { id } = useParams();
 	const history = useHistory();
@@ -43,8 +43,9 @@ const DetalleEvento = props => {
 	};
 
 	useEffect(() => {
+		const abortController = new AbortController();
 		const getData = async () => {
-			const url = `https://api.tuentrada.com/api/event?event=${id}`;
+			const url = `https://old-api.tuentrada.com/api/event?event=${id}`;
 			const token = process.env.REACT_APP_TOKEN_OBRAS;
 
 			try {
@@ -54,10 +55,9 @@ const DetalleEvento = props => {
 						'Content-Type': 'application/json',
 						Authorization: `Bearer ${token}`,
 					},
+					signal: abortController.signal,
 				});
-
-				const data = await res.json();
-
+				console.log({res})
 				// eslint-disable-next-line no-throw-literal
 				if (!res.ok) {
 					throw {
@@ -68,19 +68,26 @@ const DetalleEvento = props => {
 					};
 				}
 
+				const data = await res.json();
+
+
 				setEventos(data);
 
 				
 			} catch (err) {
-				console.log('error', err);
-				setError(err);
+				// console.log('error', err);
+				// setError(err);
 				history.push('/error');
+				throw new Error(`Invalid request: ${err}`)
 			} finally {
 				setLoading(false);
 			}
 		};
 
 		getData();
+		return () => {
+			abortController.abort();
+		};
 	}, [idEvent]);
 
 	const daysNames = [

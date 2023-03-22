@@ -15,16 +15,16 @@ import DetalleEvento from './components/EventDetail/DetalleEvento';
 // import TestId from './components/EventDetail/TestId';
 // import TestId from './components/EventDetail/TestId';
 
-const TagManagerArgs = {
-	gtmId: 'GTM-N2N9W5J',
-};
+// const TagManagerArgs = {
+// 	gtmId: 'GTM-N2N9W5J',
+// };
 
-TagManager.initialize(TagManagerArgs);
+// TagManager.initialize(TagManagerArgs);
 
 function App() {
-	useEffect(() => {
-		TagManager.initialize(TagManagerArgs);
-	}, []);
+	// useEffect(() => {
+	// 	TagManager.initialize(TagManagerArgs);
+	// }, []);
 
 	return (
 		<>
